@@ -1,0 +1,96 @@
+p {
+    font-size: 18px;
+}
+
+h3 {
+    margin: calc(1rem - 0.842857em) 0 1rem;
+}
+
+#clock {
+    /*border: solid 3px orange;*/
+    padding:10px;
+}
+
+#clock canvas {
+    background-color: #fff;
+    transform: scaleY(-1);
+}
+
+#schedule {
+    padding: 2.5rem 0rem;
+}
+
+#schedule table {
+    float: right;
+    border: none;
+    background-color: transparent;
+    width: 60%;
+}
+
+#schedule table th, #schedule table td {
+    background-color: transparent;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+#schedule table th {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 3px white;
+}    
+
+#schedule table td {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+#class1 {
+    border-right: solid 8px orange;
+}
+
+#class2 {
+    border-right: solid 8px green;
+}
+
+#class3 {
+    border-right: solid 8px rgb(244, 91, 105);
+}
+
+#eng_game {
+    height: 40%;
+    /*border: solid 3px green;*/
+}
+
+.blue {
+    background-color: #1a1a7fff;
+    margin-top: 3.5rem;
+}
+
+.grey {
+    background-color: #eeeeeeff;
+}
+
+.orange {
+    background-color: rgb(238, 150, 75);
+}
+
+/*https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size*/
+.green {
+    background-image:url("../images/math.png");
+    background-size: contain;
+    background-color: rgb(115, 149, 111);
+    background-repeat: no-repeat;
+    width: 100%;
+    height:0;
+    padding-top: 44.67%;
+}
+
+.content-block {
+    padding: 2em;
+}
+
+.text {
+    padding: 1em;
+}

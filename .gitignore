@@ -1,0 +1,7 @@
+node_modules
+
+# Text backup files
+*.bak
+
+#Database
+*.sqlite3

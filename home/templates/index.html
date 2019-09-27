@@ -1,0 +1,145 @@
+{% extends "base_generic.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/clock.css' %}">
+{% endblock %}
+{% block content %}
+<div class="blue">
+    <div class="stackable vertically padded ui grid">
+        <div class="row">
+            <div class="ten wide column">
+                <img class="ui centered rounded image" src="{% static 'images/space.png' %}" style="width:90%;height:100%;">
+            </div>
+            <div class="six wide right floated column">
+                <!-- https://stackoverflow.com/questions/298772/django-template-variables-and-javascript -->
+                <div class="ui grid">
+                <div class="eight wide column" id="schedule">
+                    <table class="ui celled right aligned table">
+                        <thead>
+                            <tr><th><h2>今日課程</h2></th>
+                            </tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td id="class1">兒美Y20</td>
+                                </tr>
+                                <tr>
+                                    <td id="class2">國二理化</td>
+                                </tr>
+                                <tr>
+                                    <td id="class3">自走車實作</td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+                <div class="eight wide column" id="clock">
+                    <canvas> </canvas>
+                </div>
+                <div class="sixteen wide column">
+                </div>
+                <div class="sixteen wide column" id="eng_game">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grey content-block">
+    <div class="stackable vertically padded ui grid container">
+        <div class="row">
+            <div class="seven wide column text">
+                <div class="ui grid">
+                    <div class="five wide column">
+                        <h2 class="ui header" style="color:#ee964b">ABOUT US</h2>
+                        <h3 style="color:#b7b7b7">關於科登</h3>
+                    </div>
+                    <div class="eleven wide column" style="border-left: thick solid #ee964b; height:5rem; margin: auto;"></div>
+                </div>
+                <div class="ui clearing divider"></div>
+                <p>與正規教育相比，補習班常被視為旁門左道。媒體大多出現的也是負面消息。所以我希望科登有生命、有人情味，能令人耳目一新。補教業是個密集與人接觸的行業，所以我們以自己的力量帶動其他人參與社會，期待有朝一日，所有科登小孩也有能力帶領另外一群人繼續參與社會。其實年輕人並不冷漠，我們願意帶著他們邁出第一步。同時也邀請有教育夢想的朋友並肩而行！</p>
+            </div>
+            <div class="nine wide column">
+                <img class="ui large centered rounded image" src="{% static 'images/aboutus.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="orange content-block">
+    <div class="stackable very relaxed vertically padded ui grid container">
+        <div class="row">
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+            <div class="two wide column">
+                <h2 class="ui header" style="color:white">英文部</h2>
+            </div>
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+        </div>
+        <div class="three column centered row">
+            <div class="four wide column">
+                <div class="ui fluid card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui inverted button">了解更多</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/aboutus.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <a class="header">兒童美語</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div class="ui fluid card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui inverted button">了解更多</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/aboutus.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <a class="header">國中部</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div class="ui fluid card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui inverted button">了解更多</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/aboutus.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <a class="header">高中部</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="green">
+    <div style="margin-top: -44.67%; width: 100%">
+        <div class="stackable vertically padded ui grid container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/clock.js' %}"></script>
+{% endblock %}
+

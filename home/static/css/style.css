@@ -1,0 +1,12 @@
+.ui.inverted.menu {
+    font-size:1.1rem;
+    background-color: #1a1a7fff;
+}
+
+.ui .menu .menu-btn {
+    padding: 3% 1em;
+}
+
+.fade .menu {
+    opacity: 0.9;
+}
