@@ -9,6 +9,7 @@ h3 {
 #clock {
     /*border: solid 3px orange;*/
     padding:10px;
+    height: 40vh;
 }
 
 #clock canvas {
@@ -18,6 +19,7 @@ h3 {
 
 #schedule {
     padding: 2.5rem 0rem;
+    height: 40vh;
 }
 
 #schedule table {
@@ -46,15 +48,15 @@ h3 {
     border-bottom: none;
 }
 
-#class1 {
+#class0 {
     border-right: solid 8px orange;
 }
 
-#class2 {
+#class1 {
     border-right: solid 8px green;
 }
 
-#class3 {
+#class2 {
     border-right: solid 8px rgb(244, 91, 105);
 }
 

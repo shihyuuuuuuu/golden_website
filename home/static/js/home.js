@@ -1,10 +1,11 @@
-$(document).ready(function() {
-    $('#main-wrap').waypoint(function(){
-        $('#main-wrap').toggleClass('fade');
-    },{offset:-10});
+var value = JSON.parse(document.getElementById('course-data').textContent);
 
-    $('.ui.fluid.card .image').dimmer({
-        on: 'hover'
-    });
-});
-
+var myTable = "";
+for(var i = 0; i < Object.keys(value).length; ++i){
+    var id = "class" + i.toString();
+    myTable += "<tr><td id=\"" + id + "\">" + value[i].name + "</td></tr>";
+}
+if(i == 0){
+    myTable += "<tr><td>" + "今天沒課喔！" + "</td></tr>";
+}
+document.getElementById('course_insert').innerHTML = myTable;

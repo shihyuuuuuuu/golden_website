@@ -7,6 +7,20 @@ var wh = $("#clock").innerHeight()-20;
 c.width = ww;
 c.height = wh;
 
+colors = ["orange", "green", "rgb(244, 91, 105)"];
+// 把課程時間轉成時鐘上的角度
+var value = JSON.parse(document.getElementById('course-data').textContent);
+function time_to_angle(time){
+    var timeArray = time.split(":");
+    var hr = timeArray[0];
+    var min = timeArray[1];
+
+    hr = (hr > 12) ? hr-12 : hr;
+    var ang = 90 - (hr * 30) - (min/2);
+    
+    return (ang < 0) ? ang+360 : ang;
+}
+
 function getWindowSize(){
     ww = $("#clock").innerWidth()-20;
     wh = $("#clock").innerHeight()-20;
@@ -123,12 +137,12 @@ function draw(){
         //往內偏移的量
         var pan=(i % 60 == 0?-4:0);
         //長度(用於數設定特定大小)
-        var len= 4 + (i % 15 == 0?4:0) + (i % 60 == 0?8:0);
+        var len= 4 + (i % 15 == 0?4:0);
         var opacity=(len>4)?1:0.7;
         var deg=360*(i/count)*deg_to_pi;
 
-        var start_r=r+pan;
-        var end_r=r+pan+len;
+        var start_r=r;
+        var end_r=r+len;
 
         //重新開始繪製
         ctx.beginPath();
@@ -217,11 +231,14 @@ function draw(){
         ctx.stroke();
     }
 
+    // 畫課表弧線
+    for(var i = 0; i < Object.keys(value).length; ++i){
+        drawArc(ww/3.1+i*8, 8, time_to_angle(value[i].end_time), time_to_angle(value[i].start_time), colors[i]);
+    }
+
+
     drawArc(ww/2.4, 4, 90, 180, "white");
     drawArc(ww/2.4, 4, 270, 360, "white");
-    drawArc(ww/3.1, 8, 240, 300, "orange");
-    drawArc(ww/2.84, 8, 165, 255, "green"); 
-    drawArc(ww/2.63, 8, 180, 240, "rgb(244, 91, 105)"); 
 
     //更新繪製的時間
     time=time+1;

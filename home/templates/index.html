@@ -19,16 +19,8 @@
                         <thead>
                             <tr><th><h2>今日課程</h2></th>
                             </tr></thead>
-                            <tbody>
-                                <tr>
-                                    <td id="class1">兒美Y20</td>
-                                </tr>
-                                <tr>
-                                    <td id="class2">國二理化</td>
-                                </tr>
-                                <tr>
-                                    <td id="class3">自走車實作</td>
-                                </tr>
+                            <tbody id="course_insert">
+                                {{ today_course|json_script:"course-data" }}
                             </tbody>
                     </table>
                 </div>
@@ -132,14 +124,45 @@
         </div>
     </div>
 </div>
-<div class="green">
+<!--div class="green">
     <div style="margin-top: -44.67%; width: 100%">
         <div class="stackable vertically padded ui grid container">
             <div class="row">
             </div>
         </div>
     </div>
+</div-->
+<div class="content-block" style="background-color: green;">
+    <div class="stackable very relaxed vertically padded ui grid container">
+        <div class="row">
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+            <div class="two wide column">
+                <h2 class="ui header" style="color:white">數學部</h2>
+            </div>
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-block" style="background-color: blue;">
+    <div class="stackable very relaxed vertically padded ui grid container">
+        <div class="row">
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+            <div class="two wide column">
+                <h2 class="ui header" style="color:white">科技教育中心</h2>
+            </div>
+            <div class="seven wide column">
+                <hr style="border: 2px solid white; margin-top:0.8em;">
+            </div>
+        </div>
+    </div>
 </div>
 <script src="{% static 'js/clock.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
 
