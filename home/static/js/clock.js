@@ -208,6 +208,28 @@ function draw(){
         for(var i=0;i<=count;i++){
             //將240個點平均分布在圓周上，加上一點點時間
             deg= 360 * ( i / count) + time / 200;
+    
+            //如果課堂時間橫跨0度（3點）
+            if(deg_max < deg_min){
+                min = deg_max;
+                max = deg_min;
+
+                if ( deg%360 > min  && deg%360 < max ){
+                    //不成立就只移動點，不繪製
+                    ctx.moveTo(
+                        r * Math.cos( deg * deg_to_pi),
+                        r * Math.sin( deg * deg_to_pi)
+                    );
+                }else{
+                    //如果成立就預設要畫
+                    ctx.lineTo(
+                        r * Math.cos( deg * deg_to_pi),
+                        r * Math.sin( deg * deg_to_pi)
+                    );
+                }
+                continue;
+            }
+
             //如果每180度以內餘數 > 90度
             if ( deg%360 > deg_min  && deg%360 < deg_max ){
                 //如果成立就預設要畫
