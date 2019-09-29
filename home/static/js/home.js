@@ -9,3 +9,14 @@ if(i == 0){
     myTable += "<tr><td>" + "今天沒課喔！" + "</td></tr>";
 }
 document.getElementById('course_insert').innerHTML = myTable;
+
+
+$("#down-icon").mouseenter(function(){
+    $(this).transition('jiggle');
+});
+
+$("#down-icon").click(function(){
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".grey.content-block").offset().top - 150
+    }, 1000);
+});

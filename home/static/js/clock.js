@@ -253,7 +253,7 @@ function draw(){
         ctx.stroke();
     }
 
-    // 畫課表弧線
+    //繪製課表弧線
     for(var i = 0; i < Object.keys(value).length; ++i){
         drawArc(ww/3.1+i*8, 8, time_to_angle(value[i].end_time), time_to_angle(value[i].start_time), colors[i]);
     }
