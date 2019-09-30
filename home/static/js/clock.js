@@ -7,7 +7,7 @@ var wh = $("#clock").innerHeight()-20;
 c.width = ww;
 c.height = wh;
 
-colors = ["orange", "green", "rgb(244, 91, 105)"];
+colors = ["orange", "green", "rgb(244, 91, 105)", "blue"];
 // 把課程時間轉成時鐘上的角度
 var value = JSON.parse(document.getElementById('course-data').textContent);
 function time_to_angle(time){
@@ -253,14 +253,13 @@ function draw(){
         ctx.stroke();
     }
 
+    drawArc(ww/2.4, 4, 90, 180, "white");
+    drawArc(ww/2.4, 4, 270, 360, "white");
+    
     //繪製課表弧線
     for(var i = 0; i < Object.keys(value).length; ++i){
         drawArc(ww/3.1+i*8, 8, time_to_angle(value[i].end_time), time_to_angle(value[i].start_time), colors[i]);
     }
-
-
-    drawArc(ww/2.4, 4, 90, 180, "white");
-    drawArc(ww/2.4, 4, 270, 360, "white");
 
     //更新繪製的時間
     time=time+1;

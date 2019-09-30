@@ -15,6 +15,14 @@ $("#down-icon").mouseenter(function(){
     $(this).transition('jiggle');
 });
 
+$(document).ready(function(){
+    $('#main-wrap').waypoint(function(){
+        //$(".grey").transition({animation:'vertical flip', duratoin:'2s', disable:true});
+    $(".grey").addClass('animated fadeInUp');
+    $(".grey").css("visibility", "visible");
+    },{offset:-40});
+});
+
 $("#down-icon").click(function(){
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".grey.content-block").offset().top - 150

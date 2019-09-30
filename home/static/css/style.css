@@ -10,3 +10,7 @@
 .fade .menu {
     opacity: 0.9;
 }
+
+body {
+    background-color: #1a1a7fff;
+}

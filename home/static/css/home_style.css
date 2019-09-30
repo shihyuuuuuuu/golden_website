@@ -60,6 +60,10 @@ h3 {
     border-right: solid 8px rgb(244, 91, 105);
 }
 
+#class3 {
+    border-right: solid 8px blue;
+}
+
 #eng_game {
     height: 40%;
     /*border: solid 3px green;*/
