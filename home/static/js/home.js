@@ -18,13 +18,13 @@ $("#down-icon").mouseenter(function(){
 $(document).ready(function(){
     $('#main-wrap').waypoint(function(){
         //$(".grey").transition({animation:'vertical flip', duratoin:'2s', disable:true});
-    $(".grey").addClass('animated fadeInUp');
-    $(".grey").css("visibility", "visible");
+    $("#about-us").addClass('animated fadeInUp');
+    $("#about-us").css("visibility", "visible");
     },{offset:-40});
 });
 
 $("#down-icon").click(function(){
     $([document.documentElement, document.body]).animate({
-        scrollTop: $(".grey.content-block").offset().top - 150
+        scrollTop: $("#about-us").offset().top - 150
     }, 1000);
 });

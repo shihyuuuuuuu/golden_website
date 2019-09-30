@@ -1,8 +1,8 @@
 var c = document.querySelector("#clock canvas");
 var ctx = c.getContext("2d");
 
-var ww = $("#clock").innerWidth()-20;
-var wh = $("#clock").innerHeight()-20;
+var ww = $("#clock").innerWidth()-10;
+var wh = $("#clock").innerHeight()-10;
 
 c.width = ww;
 c.height = wh;
