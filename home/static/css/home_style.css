@@ -5,6 +5,7 @@
 
 #schedule_area {
     height: 60%;
+    padding: 5% 0;
 }
 
 #sche_tbl {
@@ -76,9 +77,11 @@
     position:absolute; 
     text-align:center; 
 }
+
 .content-area {
     padding: 4em 0;
 }
+
 #about-us {
     background-color: #eeeeeeff;
     visibility: hidden;
@@ -91,11 +94,44 @@
 
 #about-us h3 {
     color: #b7b7b7;
+    display: inline;
     margin: 0;
 }
 
-#english-area {
+#english {
     background-color: #fff;
+}
+
+.inform-box {
+    background-color: rgb(12, 12, 12, 0.5); 
+    border: solid 3px orange;
+    color: white;
+    height: 350px; 
+    margin: 0 3%;
+    padding: 0;
+    position: relative;
+}
+
+.inform-box h2 {
+    margin-top: 40%;
+    text-align: center;
+}
+
+.inform-box h2::after {
+    border-bottom: solid 3px #fff;
+    content: "";
+    display: block;
+    margin: 48px auto auto;
+    width: 56px;
+}
+
+.overlayDiv {
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;    
 }
 
 #footer {
