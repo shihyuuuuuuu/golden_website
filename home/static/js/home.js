@@ -11,20 +11,37 @@ if(i == 0){
 document.getElementById('course_insert').innerHTML = myTable;
 
 
-$("#down-icon").mouseenter(function(){
-    $(this).transition('jiggle');
-});
 
 $(document).ready(function(){
     $('#main-wrap').waypoint(function(){
-        //$(".grey").transition({animation:'vertical flip', duratoin:'2s', disable:true});
-    $("#about-us").addClass('animated fadeInUp');
-    $("#about-us").css("visibility", "visible");
+        $("#about-us").addClass('animated fadeInUp');
+        $("#about-us").css("visibility", "visible");
     },{offset:-40});
+    
+    $('#about-us').waypoint(function(){
+        $("#english").addClass('animated fadeInUp');
+        $("#english").css("visibility", "visible");
+    },{offset:-40});
+
+    $('.double.right.icon') 
+        .transition('set looping')
+        .transition('slide left', '800ms');
+    
+    /*$("#down-icon").mouseenter(function(){
+        $(this).transition('jiggle');
+    });*/
+
+    $("#down-icon")
+        .transition('set looping')
+        .transition('jiggle', '1000ms');
+    
+    $("#down-icon").click(function(){
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#about-us").offset().top - 150
+        }, 1000);
+    });
+
+    $("#child_english").modal('attach events', '.dimmer .button', 'show');
+    $("#week_schedule").modal('attach events', '#clock i, #clock a', 'show');
 });
 
-$("#down-icon").click(function(){
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("#about-us").offset().top - 150
-    }, 1000);
-});

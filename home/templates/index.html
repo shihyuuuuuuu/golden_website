@@ -26,6 +26,10 @@
                     </div>
                     <div class="eight wide column" id="clock">
                         <canvas> </canvas>
+                        <div style="color:#fff;" align="center">
+                            <i class="angle double right icon"></i>
+                            <a href="#" style="color:#fff;">查看一週時間表</a>
+                        </div>
                     </div>
                 </div>
                 <div class="sixteen wide column" id="game">
@@ -33,7 +37,7 @@
             </div>
             <div class"sixteen wide column" id="inform-down">
                 <i id="down-icon" class="chevron down link icon" style="opacity:0.6; font-size:2rem;"></i>
-                <p sytle="opacity:0.6; font-size:8px;">往下查看詳細介紹</p>
+                <p sytle="opacity:0.6; font-size:8px;">往下看詳細介紹</p>
             </div>
         </div>
     </div>
@@ -75,22 +79,68 @@
     </div>
 </div>
 <div class="content-area" id="english">
-    <div class="ui grid container">
-        <div class="twelve wide column">
-            <div class="ui three column grid">
-                <div class="four wide column inform-box">
-                    <h2>兒童美語<br></h2>
-                    <div class="overlayDiv" style="display:none">
-                        <p style="margin-top:50px;text-align:center;font-size:18px;">Searching...</p>
+    <div style="height:100px; width:250px; position:absolute; top:75%; left:5%; border-left:solid 6px #ee964b;border-bottom:solid 6px #ee964b;"></div>
+    <div style="height:100px; width:60px; position:absolute; top:10%; right:70px; border-right:solid 6px #ee964b;border-top:solid 6px #ee964b;"></div>
+    <div style="text-align:center;width:120px;font-size:2rem; position:absolute; top:9%; right:130px;background-color:transparent; color:#ee964b;">英文部</div>
+    <div style="height:10px; width:100px; position:absolute; top:10%; right:250px; border-top:solid 6px #ee964b;"></div>
+    <div class="ui grid container" style="margin: 5rem 0;">
+        <div class="ui four column grid">
+            <div class="column">
+                <div class="ui fluid card" style="height:350px; position: relative;">
+                    <div class="blurring dimmable image">
+                        <div class="grade"><h2>兒童美語</h2></div>
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <h2>兒童美語</h2>
+                                <div class="ui inverted button">了解更多</div>
+                                <p style="margin-top: 1em;">小班制教學</p>
+                                <p style="margin-top: 0.5em;">自然發音</p>
+                                <p style="margin-top: 0.5em;">打好文法基礎</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/crymylife1.png' %}">
                     </div>
                 </div>
-                <div class="four wide column inform-box"><h2>國中部<br></h2></div>
-                <div class="four wide column inform-box"><h2>高中部<br></h2></div>
+            </div>
+            <div class="column">
+                <div class="ui fluid card" style="height:350px;">
+                    <div class="blurring dimmable image">
+                        <div class="grade"><h2>國中部</h2></div>
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <h2>國中部</h2>
+                                <div class="ui inverted button">了解更多</div>
+                                <p style="margin-top: 1em;">小班制教學</p>
+                                <p style="margin-top: 0.5em;">自然發音</p>
+                                <p style="margin-top: 0.5em;">打好文法基礎</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/crymylife1.png' %}">
+                    </div>
+                </div>
+                <!--div class="ui medium image">
+                    <img src="{% static 'images/crymylife1.png' %}">
+                    </div-->
+        </div>
+        <div class="column">
+            <div class="ui fluid card" style="height:350px;">
+                <div class="blurring dimmable image">
+                    <div class="grade"><h2>高中部</h2></div>
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <h2>高中部</h2>
+                            <div class="ui inverted button">了解更多</div>
+                            <p style="margin-top: 1em;">小班制教學</p>
+                            <p style="margin-top: 0.5em;">自然發音</p>
+                            <p style="margin-top: 0.5em;">打好文法基礎</p>
+                        </div>
+                    </div>
+                    <img src="{% static 'images/crymylife1.png' %}">
+                </div>
             </div>
         </div>
-        <div class="four wide column">
-        </div>
     </div>
+</div>
 </div>
 <div class="content-area" style="background-color: rgb(115, 149, 111);">
     <div class="stackable very relaxed vertically padded ui grid container">
@@ -99,7 +149,7 @@
                 <hr style="border: 2px solid white; margin-top:0.8em;">
             </div>
             <div class="two wide column">
-                <h2 class="ui header" style="color:white">數學部</h2>
+                <h2 class="ui header" style="color:white">數理部</h2>
             </div>
             <div class="seven wide column">
                 <hr style="border: 2px solid white; margin-top:0.8em;">
@@ -149,6 +199,111 @@
         <div class="ui clearing divider"></div>
         <div class="row">
             Copyright 2019 © 科登文教機構 Golden, All Rights Reserved. Designed by shihyuuuuuuu·_·
+        </div>
+    </div>
+</div>
+<div class="ui modal" id="week_schedule">
+    <i class="close icon"></i>
+    <div class="header">
+        課程時間表
+    </div>
+    <div class="content">
+        <div class="description">
+            <table class="ui definition table center aligned">
+                <thead>
+                    <tr><th></th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>早上</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>下午</td>
+                            <td>兒美Y20<br>(1615~1800)</td>
+                            <td></td>
+                            <td>兒美Y21<br>(1530~1715)</td>
+                            <td>兒美Y20<br>(1615~1800)</td>
+                            <td>兒美Y21<br>(1530~1715)</td>
+                            <td>國一數學<br>(1400~1700)</td>
+                        </tr>
+                        <tr>
+                            <td>晚上</td>
+                            <td>國一英文<br>(1830~2100)<br>高二數學<br>(1830~2130)</td>
+                            <td>高一英文<br>(1900~2200)<br>國三理化<br>(1830~2130)</td>
+                            <td>國二英文<br>(1830~2200)<br>高職二數學<br>(1830~2130)</td>
+                            <td>國一英文<br>(1830~2100)<br>高職電子學<br>(1830~2130)</td>
+                            <td>國三英文<br>(1830~2200)<br>高一數學<br>(1830~2130)</td>
+                            <td>國三數學<br>(1830~2130)</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="ui modal" id="child_english">
+    <i class="close icon"></i>
+    <div class="header">
+        英文部-兒童美語
+    </div>
+    <div class="image content">
+        <div class="description">
+            <p>簡單的班級描述。</p>
+            <table class="ui definition center aligned table">
+                <thead>
+                    <tr><th>班級代號</th>
+                        <th>Y20</th>
+                        <th>Y21</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>適合程度</td>
+                            <td>有基礎單字量、基礎文法概念<br>(小四～小六)</td>
+                            <td>無基礎之初學者，從頭打穩英文基礎<br>(小一～小三)</td>
+                        </tr>
+                        <tr>
+                            <td>上課時間</td>
+                            <td>每週一、四 16:15 ~ 18:00</td>
+                            <td>每週三、五 15:30 ~ 17:15</td>
+                        </tr>
+                        <tr>
+                            <td>文法</td>
+                            <td>EFL Phonics 4</td>
+                            <td>EFL Phonics 5</td>
+                        </tr>
+                        <tr>
+                            <td>單字</td>
+                            <td>7000單</td>
+                            <td>4000單</td>
+                        </tr>
+                        <tr>
+                            <td>聽力、口說</td>
+                            <td>Target Listening 1</td>
+                            <td>Target Listening 2</td>
+                        </tr>
+                        <tr>
+                            <td>閱讀、寫作</td>
+                            <td>rating (integer)</td>
+                            <td>Sets the current star rating to specified value</td>
+                        </tr>
+                        <tr>
+                            <td>學校版本</td>
+                            <td>rating (integer)</td>
+                            <td>Sets the current star rating to specified value</td>
+                        </tr>
+                    </tbody>
+            </table>
         </div>
     </div>
 </div>
