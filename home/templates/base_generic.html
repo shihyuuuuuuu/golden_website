@@ -22,10 +22,10 @@
         {% block styles %}{% endblock %}
     </head>
     <body>
-        <div id="main-wrap" class>
-            <div class="ui fixed inverted menu">
+        <div id="main-wrap">
+            <div class="ui fixed inverted stackable menu">
                 <a class="header item" style="font-size:large">科登文教</a>
-                <div class="right menu">
+                <div class="right menu" id="hamburger">
                     <a class="item">關於科登</a>
                     <a class="item">理念與願景</a>
                     <div class="ui simple dropdown item">
@@ -44,6 +44,14 @@
                     <div class="item menu-btn">
                         <div class="ui inverted button">登入</div>
                     </div>
+                    <!--a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="bars inverted icon"></i>
+                    </a-->
+                    <div class="hamburger ">
+	                    <span class="hamburger-bun"></span>
+	                    <span class="hamburger-patty"></span>
+	                    <span class="hamburger-bun"></span>
+	                </div>
                 </div>
             </div>
             {% block content %}{% endblock %}
