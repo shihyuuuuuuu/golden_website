@@ -1,6 +1,7 @@
 .ui.inverted.menu {
     font-size:1.1rem;
     background-color: #1a1a7fff;
+    height: 4rem;
 }
 
 .ui .menu .menu-btn {

@@ -1,8 +1,8 @@
-var c = document.querySelector("#clock canvas");
+var c = document.querySelector("#clock_div canvas");
 var ctx = c.getContext("2d");
 
-var ww = $("#clock").innerWidth()-10;
-var wh = $("#clock").innerHeight()-10;
+var ww = $("#clock_div").innerWidth();
+var wh = $("#clock_div").innerHeight();
 
 c.width = ww;
 c.height = wh;
@@ -22,8 +22,8 @@ function time_to_angle(time){
 }
 
 function getWindowSize(){
-    ww = $("#clock").innerWidth()-20;
-    wh = $("#clock").innerHeight()-20;
+    ww = $("#clock_div").innerWidth();
+    wh = $("#clock_div").innerHeight();
     c.width = ww;
     c.height = wh;
 

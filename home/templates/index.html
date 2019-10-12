@@ -7,9 +7,9 @@
 {% block content %}
 <div class="universe">
     <div class="stackable vertically padded ui grid">
-        <div class="row">
+        <div class="row" id="main-area">
             <div class="ten wide column">
-                <img class="ui centered rounded image" src="{% static 'images/space.png' %}" style="width:90%;height:auto;">
+                <img class="ui centered image" src="{% static 'images/space.png' %}">
             </div>
             <div class="six wide right floated column">
                 <!-- https://stackoverflow.com/questions/298772/django-template-variables-and-javascript -->
@@ -25,10 +25,12 @@
                         </table>
                     </div>
                     <div class="eight wide column" id="clock">
-                        <canvas> </canvas>
-                        <div style="color:#fff;" align="center">
-                            <i class="angle double right icon"></i>
-                            <a href="#" style="color:#fff;">查看一週時間表</a>
+                        <div id="clock_div">
+                            <canvas> </canvas>
+                            <div style="color:#fff;" align="center">
+                                <i class="angle double right icon"></i>
+                                <a href="#" style="color:#fff;">查看一週時間表</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -37,7 +39,7 @@
             </div>
             <div class"sixteen wide column" id="inform-down">
                 <i id="down-icon" class="chevron down link icon" style="opacity:0.6; font-size:2rem;"></i>
-                <p sytle="opacity:0.6; font-size:8px;">往下看詳細介紹</p>
+                <p sytle="font-size:8px;">往下看詳細介紹</p>
             </div>
         </div>
     </div>
