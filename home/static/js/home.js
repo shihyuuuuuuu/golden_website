@@ -16,13 +16,23 @@ $(document).ready(function(){
     $('#main-wrap').waypoint(function(){
         $("#about-us").addClass('animated fadeInUp');
         $("#about-us").css("visibility", "visible");
-    },{offset:-40});
+    },{offset:-30});
     
     $('#about-us').waypoint(function(){
         $("#english").addClass('animated fadeInUp');
         $("#english").css("visibility", "visible");
-    },{offset:-40});
+    },{offset:-30});
 
+    $('#english').waypoint(function(){
+        $("#math").addClass('animated fadeInUp');
+        $("#math").css("visibility", "visible");
+    },{offset:-30});
+    
+    $('#math').waypoint(function(){
+        $("#tech").addClass('animated fadeInUp');
+        $("#tech").css("visibility", "visible");
+    },{offset:-30});
+    
     $('.double.right.icon') 
         .transition('set looping')
         .transition('slide left', '800ms');

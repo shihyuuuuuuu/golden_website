@@ -107,7 +107,7 @@
     visibility: hidden;
 }
 
-#about-us p {
+.content-area p {
     font-size: 18px;
     line-height: 40px;
 }
@@ -121,7 +121,6 @@
 #english {
     background-image: url("../images/aboutus_bw.jpg");
     background-size:cover;
-    padding-bottom: 1rem;
     position: relative;
     background-color: #eeeeeeff;
     visibility: hidden;
@@ -154,23 +153,15 @@
     margin-bottom: 2em;
 }
 
-#english .inform-box {
-    color: white;
-    height:400px;
-    position: relative;
+#math {
+    background-color: rgb(115, 149, 111);
+    color:#fff;
+    visibility: hidden;
 }
 
-.inform-box h2 {
-    margin-top: 40%;
-    text-align: center;
-}
-
-.inform-box h2::after {
-    border-bottom: solid 3px #fff;
-    content: "";
-    display: block;
-    margin: 48px auto auto;
-    width: 56px;
+#tech {
+    background-color: #3FBFBB;
+    visibility: hidden;
 }
 
 #footer {
