@@ -5,7 +5,7 @@
 }
 
 .ui .menu .menu-btn {
-    padding: 3% 1em;
+    padding: 1em;
 }
 
 .fade .menu {
@@ -16,6 +16,8 @@ body {
     background-color: #1a1a7fff;
 }
 
+/* Reference: https://github.com/natzar/SemanticUiHamburgerMenu */
+/* Hamburger hidden by default */
 .hamburger{
 	display:none
 }
@@ -32,20 +34,22 @@ body {
   }
 
 	.hamburger {
-		width: 20px;
-		height: 20px;
+		width: 1.5rem;
+		height: 1.5rem;
 		position: absolute;
-		right: 9px;
-		top: 13px;
+		right: 1.25rem;
+		top: 1.25rem;
 		cursor: pointer;
 		display: block;
 	}
-	.hamburger 	span {
+
+	.hamburger span {
 		display: block;
 		height: 3px;
 		background: #fff;
 		margin: 0 0 3px;
 	}
+
 	.hamburger:hover {
 		-moz-opacity: 1;
 	    -khtml-opacity: 1;
@@ -58,9 +62,7 @@ body {
 	    -o-transition-duration: .2s;
 	    transition-duration: .2s;
 	}
-	.hamburger.active {
 
-	}
 	.hamburger.active .hamburger-bun {
 		margin: 0;
 		-webkit-transform-origin: center center;
@@ -68,7 +70,7 @@ body {
 		-o-transform-origin: center center;
 		transform-origin: center center;
 	}
-
+			
 	.hamburger.active .hamburger-bun:first-child {
 		-webkit-transform: rotate(45deg);
 	    -moz-transform: rotate(45deg);
@@ -84,8 +86,9 @@ body {
 	    -ms-transition: all .2s ease;
 	    -o-transition: all .2s ease;
 	    transition: all .2s ease;
-	    margin-top: 3px;
+	    margin-top: 8px;
 	}
+
 	.hamburger.active .hamburger-bun:last-child {
 		-webkit-transform: rotate(-45deg);
 		-moz-transform: rotate(-45deg);
@@ -108,16 +111,15 @@ body {
 		display: none;
 	}
 
-	#main-wrap .right.menu .item {
+	.ui.stackable.menu .item:not(.header){
 		display:none;
 	}
 
-
-	#main-wrap .right.menu.open .item{
+	.ui.stackable.menu.open .item{
 		display:block;
 	}
 
-    #main-wrap .right.menu.open {
+	.ui.stackable.menu.open {
 		height:inherit
 	}
 }
@@ -169,4 +171,3 @@ body {
     display: none !important;
   }
 }
-

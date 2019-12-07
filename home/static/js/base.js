@@ -1,7 +1,11 @@
 $(document).ready(function() {
+	$('.ui.dropdown').dropdown({
+		action: 'hide',
+	});
+
     $('#main-wrap').waypoint(function(){
-        $('#main-wrap').toggleClass('fade');
-    },{offset:-10});
+		$('#main-wrap').toggleClass('fade');
+    },{offset:-1});
 
     $('.ui.fluid.card .image').dimmer({
         on: 'hover'

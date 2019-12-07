@@ -6,41 +6,45 @@
 {% endblock %}
 {% block content %}
 <div class="universe">
-    <div class="stackable vertically padded ui grid">
-        <div class="row" id="main-area">
-            <div class="ten wide column">
-                <img class="ui centered image" src="{% static 'images/space.png' %}">
-            </div>
-            <div class="six wide right floated column">
-                <!-- https://stackoverflow.com/questions/298772/django-template-variables-and-javascript -->
-                <div class="ui two column grid" id="schedule_area">
-                    <div class="eight wide column" id="sche_tbl">
-                        <table class="ui celled right aligned table">
-                            <thead>
-                                <tr><th><h2>今日課程</h2></th></tr>
-                            </thead>
-                            <tbody id="course_insert">
-                                {{ today_course|json_script:"course-data" }}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="eight wide column" id="clock">
-                        <div id="clock_div">
+    <div class="ui two column padded grid" id="main-area">
+        <div class="ten wide computer sixteen wide mobile column">
+            <img class="ui centered image" src="{% static 'images/space.png' %}">
+        </div>
+        <!-- https://stackoverflow.com/questions/298772/django-template-variables-and-javascript -->
+        <div class="six wide computer sixteen wide mobile column">
+            <div class="ui padded grid" id="right_side">
+                <div class="eight wide computer sixteen wide mobile column" id="sche_tbl">
+                    <table class="ui celled right aligned table">
+                        <thead>
+                            <tr><th><h2>今日課程</h2></th></tr>
+                        </thead>
+                        <tbody id="course_insert">
+                            {{ today_course|json_script:"course-data" }}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="eight wide column" id="schedule_right">
+                    <div class="ui padded grid" id="clock_grid">
+                        <div class="sixteen wide column" id="clock_div">
                             <canvas> </canvas>
-                            <div style="color:#fff;" align="center">
-                                <i class="angle double right icon"></i>
-                                <a href="#" style="color:#fff;">查看一週時間表</a>
-                            </div>
+                        </div>
+                        <div class="sixteen wide column" align="center" id="schedule_link">
+                            <i class="angle double right icon"></i>
+                            <a href="#" style="color:#fff;">查看完整課表</a>
                         </div>
                     </div>
                 </div>
+                <button class="ui blue button" id="schedule_btn">
+                    <i class="angle double right icon"></i>
+                    &nbsp;&nbsp;查看完整課表
+                </button>
                 <div class="sixteen wide column" id="game">
                 </div>
             </div>
-            <div class"sixteen wide column" id="inform-down">
-                <i id="down-icon" class="chevron down link icon" style="opacity:0.6; font-size:2rem;"></i>
-                <p sytle="font-size:8px;">往下看詳細介紹</p>
-            </div>
+        </div>
+        <div class"sixteen wide column" id="inform-down">
+            <i id="down-icon" class="chevron down link icon" style="opacity:0.6; font-size:2rem;"></i>
+            <p sytle="font-size:8px;">往下看詳細介紹</p>
         </div>
     </div>
 </div>
@@ -62,7 +66,7 @@
                 <img class="ui large centered rounded image" src="{% static 'images/aboutus.jpg' %}">
             </div>
         </div>
-        <div class="row">
+        <!--div class="row">
             <div class="eight wide column">
                 <img class="ui large centered rounded image" src="{% static 'images/aboutus.jpg' %}">
             </div>
@@ -77,10 +81,10 @@
                 <div class="ui clearing divider"></div>
                 <p>以開啟學生語言學習之鑰為首務。師資均具有專業英文職能、資歷與教學熱誠,願意付出百分之百所學及心力於教學對象。 不只是英文補習班,同時也兼任教導學生思考和知識整合能力的教育機構 ,使學生自在應用英文於聽、說、讀、寫,在日益國際化的環境中更具競爭力。</p>
             </div>
-        </div>
+        </div-->
     </div>
 </div>
-<div class="content-area" id="english">
+<!--div class="content-area" id="english">
     <div style="height:100px; width:250px; position:absolute; top:75%; left:5%; border-left:solid 6px #ee964b;border-bottom:solid 6px #ee964b;"></div>
     <div style="height:100px; width:60px; position:absolute; top:10%; right:70px; border-right:solid 6px #ee964b;border-top:solid 6px #ee964b;"></div>
     <div style="text-align:center;width:120px;font-size:2rem; position:absolute; top:9%; right:130px;background-color:transparent; color:#ee964b;">英文部</div>
@@ -218,55 +222,54 @@
             Copyright 2019 © 科登文教機構 Golden, All Rights Reserved. Designed by shihyuuuuuuu·_·
         </div>
     </div>
-</div>
+</div-->
 <div class="ui modal" id="week_schedule">
     <i class="close icon"></i>
     <div class="header">
         課程時間表
     </div>
     <div class="content">
-        <div class="description">
-            <table class="ui definition table center aligned">
-                <thead>
-                    <tr><th></th>
-                        <th>一</th>
-                        <th>二</th>
-                        <th>三</th>
-                        <th>四</th>
-                        <th>五</th>
-                        <th>六</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr>
-                            <td>早上</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>下午</td>
-                            <td>兒美Y20<br>(1615~1800)</td>
-                            <td></td>
-                            <td>兒美Y21<br>(1530~1715)</td>
-                            <td>兒美Y20<br>(1615~1800)</td>
-                            <td>兒美Y21<br>(1530~1715)</td>
-                            <td>國一數學<br>(1400~1700)</td>
-                        </tr>
-                        <tr>
-                            <td>晚上</td>
-                            <td>國一英文<br>(1830~2100)<br>高二數學<br>(1830~2130)</td>
-                            <td>高一英文<br>(1900~2200)<br>國三理化<br>(1830~2130)</td>
-                            <td>國二英文<br>(1830~2200)<br>高職二數學<br>(1830~2130)</td>
-                            <td>國一英文<br>(1830~2100)<br>高職電子學<br>(1830~2130)</td>
-                            <td>國三英文<br>(1830~2200)<br>高一數學<br>(1830~2130)</td>
-                            <td>國三數學<br>(1830~2130)</td>
-                        </tr>
-                    </tbody>
-            </table>
-        </div>
+        <table class="ui definition table center aligned">
+            <thead>
+                <tr><th></th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>早上</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>下午</td>
+                    <td>兒美Y20<br>(1615~1800)</td>
+                    <td></td>
+                    <td>兒美Y21<br>(1530~1715)</td>
+                    <td>兒美Y20<br>(1615~1800)</td>
+                    <td>兒美Y21<br>(1530~1715)</td>
+                    <td>國一數學<br>(1400~1700)</td>
+                </tr>
+                <tr>
+                    <td>晚上</td>
+                    <td>國一英文<br>(1830~2100)<br>高二數學<br>(1830~2130)</td>
+                    <td>高一英文<br>(1900~2200)<br>國三理化<br>(1830~2130)</td>
+                    <td>國二英文<br>(1830~2200)<br>高職二數學<br>(1830~2130)</td>
+                    <td>國一英文<br>(1830~2100)<br>高職電子學<br>(1830~2130)</td>
+                    <td>國三英文<br>(1830~2200)<br>高一數學<br>(1830~2130)</td>
+                    <td>國三數學<br>(1830~2130)</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="ui modal" id="child_english">
@@ -327,4 +330,3 @@
 <script src="{% static 'js/clock.js' %}"></script>
 <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
-

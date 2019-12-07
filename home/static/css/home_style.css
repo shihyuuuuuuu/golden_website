@@ -2,122 +2,118 @@
     background-color: #1a1a7fff;
     margin-top: 4rem;
     height: calc(100vh - 4rem);
+    border: 3px solid red;
 }
-
 #main-area {
     padding-top:0rem;
     padding-bottom:0rem;
     height: calc(100vh - 4rem);
+    border: 3px solid orange;
 }
-
 #main-area .ten.wide, #main-area .six.wide {
     height: 100%;
+    border: 3px solid yellow;
 }
-
-#main-area .ten.wide img {
-    width:auto;
+#main-area .column img {
+    width: auto;
+    height: calc(100% + 2rem);
+    margin: -1rem auto;
+    border: 3px solid green;
+}
+#right_side {
     height: 100%;
 }
-
-#schedule_area {
-    height: 60%;
-    margin: 0;
-}
-
 #sche_tbl {
-    padding: 2.5rem 0rem;
+    height: 60%;
+    border: 3px solid green;
 }
-
 #sche_tbl table {
     float: right;
     border: none;
     background-color: transparent;
-    width: 60%;
-    position: relative;
+    width: 75%;
 }
-
 #sche_tbl table th, #sche_tbl table td {
     background-color: transparent;
     font-size: 1.3rem;
     color: #fff;
 }
-
 #sche_tbl table th {
     border: none;
     border-bottom: solid 3px white;
 }    
-
 #sche_tbl table td {
     border-top: none;
     border-left: none;
     border-bottom: none;
 }
-
 #class0 {
     border-right: solid 8px orange;
 }
-
 #class1 {
     border-right: solid 8px green;
 }
-
 #class2 {
     border-right: solid 8px rgb(244, 91, 105);
 }
-
 #class3 {
     border-right: solid 8px blue;
 }
-
-#clock {
+#schedule_right {
+    height: 60%;
+    padding: 0;
+    border: 3px solid green;
+}
+#clock_grid {
     height: 100%;
+    border: 3px solid blue;
 }
-
 #clock_div {
-    height: 70%;
+    height: 60%;
+    padding: 0;
+    border: 3px solid purple;
 }
-
 #clock_div canvas {
     background-color: #1a1a7fff;
     transform: scaleY(-1);
+    border: 3px solid black;
 }
-
+#schedule_link {
+    height: 40%;
+    color: #fff;
+    border: 3px solid purple;
+}
+#schedule_btn {
+    display: none;
+}
 #game {
     height: 40%;
+    border: 3px solid green;
 }
-
 #inform-down {
     height: 50px;
     bottom:10px; 
     color:#fff; 
-    left:0; 
-    right:0;
-    margin-left: auto; 
-    margin-right: auto; 
+    width: 100%;
     position:absolute; 
     text-align:center; 
 }
-
 .content-area {
     padding: 4em 0;
 }
-
 #about-us {
     background-color: #eeeeeeff;
     visibility: hidden;
 }
-
 .content-area p {
     font-size: 18px;
     line-height: 40px;
 }
-
 #about-us h3 {
     color: #b7b7b7;
     display: inline;
     margin: 0;
 }
-
 #english {
     background-image: url("../images/aboutus_bw.jpg");
     background-size:cover;
@@ -125,7 +121,6 @@
     background-color: #eeeeeeff;
     visibility: hidden;
 }
-
 .grade {
     position: absolute;
     top: 0!important;
@@ -136,11 +131,9 @@
     padding: 1em;
     z-index: 10;
 }
-
 .grade h2 {
     margin-top: 2.6em;
 }
-
 .grade h2::after {
     border-bottom: solid 3px #000;
     content: "";
@@ -148,37 +141,68 @@
     margin: 48px auto auto;
     width: 56px;
 }
-
 .content h2 {
     margin-bottom: 2em;
 }
-
 #math {
     background-color: rgb(115, 149, 111);
     color:#fff;
     visibility: hidden;
 }
-
 #tech {
     background-color: #3FBFBB;
     visibility: hidden;
 }
-
 #footer {
     background-color: #595959;
     color:#fff;
 }
 
-/*********** Not used ***********
-//https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
-.green {
-    background-image:url("../images/math.png");
-    background-size: contain;
-    background-color: rgb(115, 149, 111);
-    background-repeat: no-repeat;
-    width: 100%;
-    height:0;
-    padding-top: 44.67%;
+@media only screen and (max-width: 767px) {
+    .universe {
+        height: auto;
+    }
+    #main-area {
+        height: auto;
+    }
+    #main-area .column img {
+        width: 100%;
+        height: auto;
+    }
+    #main-area .ten.wide, #main-area .six.wide {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    #sche_tbl {
+        height: auto;
+    }
+    #sche_tbl table th {
+        border-bottom: solid 3px white !important;
+    }
+    #sche_tbl table tr {
+        padding: 1.5px;
+    }
+    #schedule_right {
+        display: none;
+        height: auto;
+        width: 100%;
+    }
+    #schedule_btn {
+        display: block;
+        padding-left: 0;
+        width: 50%;
+        margin: 0 auto 1rem;
+    }
+    #sche_tbl table {
+        float: none;
+        margin: 0 auto;
+        width: 70%;
+    }
+    #game {
+        display: none;
+    }
+    #inform-down {
+        display: none;
+    }
 }
-********************************/
-

@@ -80,6 +80,13 @@ $(document).ready(function(){
     });
     
     $("#child_english").modal('attach events', '.dimmer .button', 'show');
-    $("#week_schedule").modal('attach events', '#clock i, #clock a', 'show');
+    $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
+    $("#week_schedule").modal('attach events', '#schedule_btn', 'show');
+
+    var width = $(window).width();
+    if(width < 767){
+        $('#sche_tbl table').removeClass('right aligned');
+        $('#sche_tbl table').addClass('center aligned');
+    }
 });
 
