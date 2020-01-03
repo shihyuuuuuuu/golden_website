@@ -2,6 +2,7 @@ $(document).ready(function(){
     var value = JSON.parse(document.getElementById('course-data').textContent);
 
     var myTable = "";
+    var width = $(window).width();
     for(var i = 0; i < Object.keys(value).length; ++i){
         var id = "class" + i.toString();
         myTable += "<tr><td id=\"" + id + "\">" + value[i].name + "</td></tr>";
@@ -14,22 +15,22 @@ $(document).ready(function(){
     $('#main-wrap').waypoint(function(){
         $("#about-us").addClass('animated fadeInUp');
         $("#about-us").css("visibility", "visible");
-    },{offset:-22});
+    },{offset:-12});
 
     $('#about-us').waypoint(function(){
         $("#english").addClass('animated fadeInUp');
         $("#english").css("visibility", "visible");
-    },{offset:-22});
+    },{offset:-12});
 
     $('#english').waypoint(function(){
         $("#math").addClass('animated fadeInUp');
         $("#math").css("visibility", "visible");
-    },{offset:-22});
+    },{offset:-12});
 
     $('#math').waypoint(function(){
         $("#tech").addClass('animated fadeInUp');
         $("#tech").css("visibility", "visible");
-    },{offset:-22});
+    },{offset:-12});
 
     $('.double.right.icon') 
         .transition('set looping')
@@ -56,8 +57,13 @@ $(document).ready(function(){
     });
 
     $("#bar_philo").click(function(){
+        if(width >= 767){
+            y_dist = 240;
+        }else{
+            y_dist = 300;
+        }
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about-us").offset().top + 240
+            scrollTop: $("#about-us").offset().top + y_dist
         }, 1000);
     });
     
@@ -83,10 +89,10 @@ $(document).ready(function(){
     $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
     $("#week_schedule").modal('attach events', '#schedule_btn', 'show');
 
-    var width = $(window).width();
     if(width < 767){
         $('#sche_tbl table').removeClass('right aligned');
         $('#sche_tbl table').addClass('center aligned');
+        $('#footer .very.relaxed.list').removeClass('horizontal');
     }
 });
 
