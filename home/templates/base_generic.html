@@ -36,10 +36,10 @@
                         </div>
                     </div>
                     <a class="item" href={% url 'bulletin' %}>我的班級</a>
-                    <div class="item menu-btn">
+                    <div class="item menu-btn" id="register_btn">
                         <div class="ui inverted button">註冊</div>
                     </div>
-                    <div class="item menu-btn">
+                    <div class="item menu-btn" id="login_btn">
                         <div class="ui inverted button">登入</div>
                     </div>
                 </div>
@@ -49,7 +49,62 @@
                     <span class="hamburger-bun"></span>
                 </div>
             </div>
+            <div class="ui modal" id="register_form">
+                <h2 class="ui blue header">
+                    <div class="content">
+                        註冊一個帳號
+                    </div>
+                </h2>
+                <form class="ui large form">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" id="reg_username" placeholder="請輸入使用者名稱 Username">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" id="reg_password" placeholder="請輸入密碼 Password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" id="val_password" placeholder="請再次輸入密碼 Password again">
+                            </div>
+                        </div>
+                        <div class="ui fluid large blue submit button">註冊</div>
+                    </div>
+                </form>
+            </div>
+            <div class="ui modal" id="login_form">
+                    <h2 class="ui blue header">
+                        <div class="content">
+                            登入科登帳號
+                        </div>
+                    </h2>
+                    <form class="ui large form">
+                        <div class="ui stacked segment">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="username" id="reg_username" placeholder="你的使用者名稱 Username">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" id="reg_password" placeholder="你的密碼 Password">
+                                </div>
+                            </div>
+                            <div class="ui fluid large blue submit button">登入科登！</div>
+                        </div>
+                    </form>
+                </div>
             {% block content %}{% endblock %}
+            
         </div>
     </body>
 </html>

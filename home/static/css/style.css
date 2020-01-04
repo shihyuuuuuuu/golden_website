@@ -22,16 +22,20 @@ body {
 	display:none
 }
 
+#register_form, #login_form {
+	width: 30vw;
+}
+
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  [class*="mobile hidden"],
-  [class*="tablet only"]:not(.mobile),
-  [class*="computer only"]:not(.mobile),
-  [class*="large screen only"]:not(.mobile),
-  [class*="widescreen only"]:not(.mobile),
-  [class*="or lower hidden"] {
-    display: none !important;
-  }
+	[class*="mobile hidden"],
+	[class*="tablet only"]:not(.mobile),
+	[class*="computer only"]:not(.mobile),
+	[class*="large screen only"]:not(.mobile),
+	[class*="widescreen only"]:not(.mobile),
+	[class*="or lower hidden"] {
+	display: none !important;
+	}
 
 	.hamburger {
 		width: 1.5rem;

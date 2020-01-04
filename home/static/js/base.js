@@ -22,4 +22,8 @@ $(document).ready(function() {
 		}
 		e.preventDefault();
 	});
+
+	$("#register_form").modal('attach events', '#register_btn .button', 'show');
+	$("#login_form").modal('attach events', '#login_btn .button', 'show');
+
 });

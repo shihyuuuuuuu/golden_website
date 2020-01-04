@@ -85,7 +85,7 @@ $(document).ready(function(){
         }, 1000);
     });
     
-    $("#child_english").modal('attach events', '.dimmer .button', 'show');
+    $("#child_english").modal('attach events', '.eng_card .button', 'show');
     $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
     $("#week_schedule").modal('attach events', '#schedule_btn', 'show');
 
