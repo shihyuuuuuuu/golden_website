@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="myclass">
+    <div class="ui padded grid">   
+        <div class="three wide column">
+            <div class="ui vertical fluid tabular menu">
+                <a class="item" href={% url 'bulletin' %}>
+                    本週訊息公佈
+                </a>
+                <a class="item" href={% url 'pretest' %}>
+                    預考區
+                </a>
+                <a class="item" href={% url 'dicussion' %}>
+                    班級討論區
+                </a>
+                <a class="item" href={% url 'score' %}>
+                    個人成績紀錄
+                </a>
+            </div>
+        </div>
+        <div class="thirteen wide column">
+            <div class="ui segment">
+            {% block class_area %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

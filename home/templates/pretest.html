@@ -1,0 +1,10 @@
+{% extends "class_template.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/myclass.css' %}">
+<script src="{% static 'js/pretest.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/pretest.css' %}">
+{% endblock %}
+{% block class_area %}
+<h2>預考區</h2>
+{% endblock %}

@@ -36,3 +36,15 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+def bulletin(request):
+    return render(request, 'bulletin.html')
+
+def pretest(request):
+    return render(request, 'pretest.html')
+
+def dicussion(request):
+    return render(request, 'dicussion.html')
+
+def score(request):
+    return render(request, 'score.html')

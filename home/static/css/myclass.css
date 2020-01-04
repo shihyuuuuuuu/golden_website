@@ -1,0 +1,17 @@
+body {
+    background-color: #fff;
+}
+
+.myclass {
+    height: 100%;
+    padding: 2rem 3rem;
+    padding-top: 6rem;
+}
+
+.myclass .menu .item {
+    font-size: 1.3rem;
+}
+
+.myclass .segment {
+    min-height: 80vh;
+}

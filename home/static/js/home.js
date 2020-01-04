@@ -20,17 +20,17 @@ $(document).ready(function(){
     $('#about-us').waypoint(function(){
         $("#english").addClass('animated fadeInUp');
         $("#english").css("visibility", "visible");
-    },{offset:-12});
+    },{offset:0});
 
     $('#english').waypoint(function(){
         $("#math").addClass('animated fadeInUp');
         $("#math").css("visibility", "visible");
-    },{offset:-12});
+    },{offset:0});
 
     $('#math').waypoint(function(){
         $("#tech").addClass('animated fadeInUp');
         $("#tech").css("visibility", "visible");
-    },{offset:-12});
+    },{offset:0});
 
     $('.double.right.icon') 
         .transition('set looping')
