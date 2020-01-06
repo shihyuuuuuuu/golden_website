@@ -1,19 +1,22 @@
-from django.shortcuts import render
 from datetime import datetime
+from django.contrib.auth.models import User
+from django.http import JsonResponse
+from django.shortcuts import render
 from .models import Course
+from .forms import RegisterForm
 
 # Create your views here.
 def index(request):
     """View function for home page of site."""
     # Course today
-    weekday = datetime.today().weekday();
+    weekday = datetime.today().weekday()
     num_course_day1_today = Course.objects.filter(day1=weekday).count()
     num_course_day2_today = Course.objects.filter(day2=weekday).count()
     course_day1_today = Course.objects.filter(day1=weekday)
     course_day2_today = Course.objects.filter(day2=weekday)
 
     today_course = {}
-    d1, d2 = 0,0;
+    d1, d2 = 0,0
     for i in range(num_course_day1_today + num_course_day2_today):
         if i < num_course_day1_today:
             today_course[i] = {
@@ -31,14 +34,35 @@ def index(request):
             d2 += 1
 
     context = {
-            'today_course':today_course,
-       }
+        'today_course':today_course,
+        'register_form': RegisterForm(),
+    }
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
+# A view for the registration request
+def registration(request):
+    form = RegisterForm(request.POST)
+    response_data = {
+        'username_err': '',
+    }
+    if form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        password2 = form.cleaned_data['password2']
+
+        # If the type of cleaned_data is list, the input is not valid.
+        if type(username) == list:
+            response_data['username_err'] = username
+        elif type(password) != list and type(password2) != list and password == password2:
+            User.objects.create_user(username, '', password)
+            
+    return JsonResponse(response_data)
+
 def bulletin(request):
-    return render(request, 'bulletin.html')
+    context = {'register_form': RegisterForm(),}
+    return render(request, 'bulletin.html', context=context)
 
 def pretest(request):
     return render(request, 'pretest.html')
