@@ -1,9 +1,11 @@
 from datetime import datetime
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Course
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
 
 # Create your views here.
 def index(request):
@@ -36,6 +38,7 @@ def index(request):
     context = {
         'today_course':today_course,
         'register_form': RegisterForm(),
+        'login_form': LoginForm(),
     }
 
     # Render the HTML template index.html with the data in the context variable
@@ -60,8 +63,19 @@ def registration(request):
             
     return JsonResponse(response_data)
 
+def login(request):
+    form = LoginForm(request.POST)
+    if form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            return HttpResponse("Login Success!")
+        else:
+            return HttpResponse("Login Failed.")
+
 def bulletin(request):
-    context = {'register_form': RegisterForm(),}
+    context = {'register_form': RegisterForm(), 'login_form': LoginForm()}
     return render(request, 'bulletin.html', context=context)
 
 def pretest(request):

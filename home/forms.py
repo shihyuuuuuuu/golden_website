@@ -10,6 +10,7 @@ class RegisterForm(forms.Form):
         widget = forms.TextInput(
             attrs={
                 'placeholder': "請輸入使用者名稱 Username",
+                'id': 'id_reg_user',
             }
         )
     )
@@ -20,6 +21,7 @@ class RegisterForm(forms.Form):
             attrs={
                 'placeholder': "請輸入密碼 Password",
                 'type': "password",
+                'id': 'id_reg_pwd',
             }
         )
     )
@@ -30,6 +32,7 @@ class RegisterForm(forms.Form):
             attrs={
                 'placeholder': "請再次輸入密碼 Password again",
                 'type': "password",
+                'id': 'id_reg_pwd2',
             }
         )
     )
@@ -47,7 +50,7 @@ class RegisterForm(forms.Form):
         if len(data) < 3:
             return ['請至少輸入三個字元']
         if len(data) > 20:
-            return ['你的名字太長囉！']
+            return ['你的名字太長了啦！']
         return data
 
     def clean_password(self):
@@ -63,3 +66,25 @@ class RegisterForm(forms.Form):
         if len(data) < 8:
             return ['Password2 length is too short.']
         return data
+
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        required = False,
+        widget = forms.TextInput(
+            attrs={
+                'placeholder': "請輸入使用者名稱 Username",
+                'id': 'id_log_user',
+            }
+        )
+    )
+
+    password = forms.CharField(
+        required = False,
+        widget = forms.TextInput(
+            attrs={
+                'placeholder': "請輸入密碼 Password",
+                'type': "password",
+                'id': 'id_log_pwd',
+            }
+        )
+    )

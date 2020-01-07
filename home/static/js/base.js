@@ -23,8 +23,31 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	$("#register_form").modal('attach events', '#register_btn .button', 'show');
-	$("#login_form").modal('attach events', '#login_btn .button', 'show');
+	$("#register_form").modal({
+		onShow: function(){
+			// Reset the form when the modal show
+			$('#register_form form').trigger('reset');
+			$('#register_form input').css("border", "1px solid rgba(34,36,38,.15)").attr("disabled", false);
+			hint_msg('username_err');
+			hint_msg('password_err');
+			hint_msg('password2_err');
+			$('#register_btn1').css("display", "inline").attr("disabled", true);
+			$('#register_btn2').css("display", "none");
+			username_ok = password_ok = password2_ok = false;
+		},
+	}).modal('attach events', '#menu_reg_btn .button, #push_me_register', 'show');
+
+	$("#login_form").modal({
+		onShow: function(){
+			// Reset the form when the modal show
+			$('#login_form form').trigger('reset');
+			$('#login_form input').css("border", "1px solid rgba(34,36,38,.15)").attr("disabled", false);
+			hint_msg('login_failed');
+			hint_msg('login_success');
+			hint_msg('login_user_err');
+			hint_msg('login_pwd_err');
+		},
+	}).modal('attach events', '#menu_login_btn .button, #register_btn2', 'show');
 
 	/*****************
 	 * Register Form *
@@ -33,61 +56,57 @@ $(document).ready(function() {
 	var password_ok = false;
 	var password2_ok = false;
 	/* Validate username entered by sending ajax request */
-	$('#id_username').on('input', function() {
+	$('#id_reg_user').on('input', function() {
 		$.post({
 			url: 'registration',
 			data: {
-				username: $('#id_username').val(),
+				username: $('#id_reg_user').val(),
 				csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
 			},
 			success: function(json){
 				hint_msg('username_err')
 				if(json.username_err !== ''){
-					$('#id_username').css("border", "1px solid red")
+					$('#id_reg_user').css("border", "1px solid red")
 					hint_msg('username_err', "#register_form .field:first-of-type", json.username_err)
 					username_ok = false
 				}else{
-					$('#id_username').css("border", "1px solid #00c300")
+					$('#id_reg_user').css("border", "1px solid #00c300")
 					username_ok = true
 				}
 
-				if(username_ok && password_ok && password2_ok){
-					$('#register_form button').attr("disabled", false)
-				}else{
-					$('#register_form button').attr("disabled", true)
-				}
+				$('#register_btn1').attr("disabled", (username_ok && password_ok && password2_ok) ? false : true)
 			},
 		});
 	});
 
 	/* Check the length and the equality of password entered */
-	$('#id_password, #id_password2').on('input', function(){
-		var pwd1 = $('#id_password').val()
-		var pwd2 = $('#id_password2').val()
+	$('#id_reg_pwd, #id_reg_pwd2').on('input', function(){
+		var pwd1 = $('#id_reg_pwd').val()
+		var pwd2 = $('#id_reg_pwd2').val()
 		hint_msg('password_err')
 		hint_msg('password2_err')
 
 		// Check password1
 		if(pwd1.length < 8 || pwd1.length > 30){
-			$('#id_password').css("border", "1px solid red")
+			$('#id_reg_pwd').css("border", "1px solid red")
 			if(pwd1.length < 8){
 				hint_msg('password_err', "#register_form  .field:nth-of-type(2)", '請至少輸入八個字元')
 			}else{
-				hint_msg('password_err', "#register_form  .field:nth-of-type(2)", '密碼長度太長囉')
+				hint_msg('password_err', "#register_form  .field:nth-of-type(2)", '太長了啦')
 			}
 			password_ok = false
 		}else{
-			$('#id_password').css("border", "1px solid rgba(34,36,38,.15)")
+			$('#id_reg_pwd').css("border", "1px solid rgba(34,36,38,.15)")
 			password_ok = true
 		}
 		
 		// Check password2
 		if(pwd2 !== pwd1 && pwd2.length != 0){
-			$('#id_password2').css("border", "1px solid red")
+			$('#id_reg_pwd2').css("border", "1px solid red")
 			hint_msg('password2_err', "#register_form  .field:nth-of-type(3)", "您輸入的密碼不匹配")
 			password2_ok = false
 		}else{
-			$('#id_password2').css("border", "1px solid rgba(34,36,38,.15)")
+			$('#id_reg_pwd2').css("border", "1px solid rgba(34,36,38,.15)")
 			password2_ok = false
 			if(pwd2.length != 0 && password_ok && pwd1 === pwd2){
 				password2_ok = true
@@ -96,31 +115,76 @@ $(document).ready(function() {
 
 		// Make the border green iff the two passwords are ok
 		if(password_ok && password2_ok){
-			$('#id_password').css("border", "1px solid #00c300")
-			$('#id_password2').css("border", "1px solid #00c300")
+			$('#id_reg_pwd').css("border", "1px solid #00c300")
+			$('#id_reg_pwd2').css("border", "1px solid #00c300")
 		}
 
-		if(username_ok && password_ok && password2_ok){
-			$('#register_form button').attr("disabled", false)
-		}else{
-			$('#register_form button').attr("disabled", true)
-		}
+		$('#register_btn1').attr("disabled", (username_ok && password_ok && password2_ok) ? false : true)
 	});
 
-	/* If the register button clicked, post a request with the data. */
-	$('#register_form button').click(function(){
+	// If the register button clicked, post a request with the data.
+	$('#register_btn1').click(function(){
 		$.post({
 			url: 'registration',
 			data: {
-				username: $('#id_username').val(),
-				password: $('#id_password').val(),
-				password2: $('#id_password2').val(),
+				username: $('#id_reg_user').val(),
+				password: $('#id_reg_pwd').val(),
+				password2: $('#id_reg_pwd2').val(),
 				csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
 			},
 			success: function(json){
-				console.log('register success!')
-			},
+				// If the registration is successful, replace the button with the login button.
+				$('#register_btn1').css("display","none");
+				$('#register_btn2').css("display", "inline");
+				$('#register_form input').attr("disabled", true);
+		},
 		});
+	});
+
+	/**************
+	 * Login Form *
+	 **************/
+	$('#id_log_user, #id_log_pwd').on('input', function(){
+		hint_msg('login_failed')
+		if($('#id_log_user').val()){
+			$('#id_log_user').css("border", "1px solid rgba(34,36,38,.15)")
+			hint_msg('login_user_err')
+		}
+		if($('#id_log_pwd').val()){
+			$('#id_log_pwd').css("border", "1px solid rgba(34,36,38,.15)")
+			hint_msg('login_pwd_err')
+		}
+	});
+	// If the login button clicked, post a request with the data.
+	$('#login_btn').click(function(){
+		if($('#id_log_user').val() && $('#id_log_pwd').val()){
+			$.post({
+				url: 'login',
+				data: {
+					username: $('#id_log_user').val(),
+					password: $('#id_log_pwd').val(),
+					csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+				},
+				success: function(message){
+					if(message == 'Login Success!'){
+						$('#login_form .field:nth-of-type(2)').append('<div id="login_success" style="color:#00c300; text-align:center">登入成功</div>')
+					}else if(message == 'Login Failed.'){
+						$('#login_form .field:nth-of-type(2)').append('<div id="login_failed" style="color:red; text-align:center">帳號或密碼錯誤，請再試一次😢</div>')
+					}
+				},
+			});
+		}else{
+			hint_msg('login_user_err')
+			hint_msg('login_pwd_err')
+			if(!$('#id_log_user').val()){
+				$('#id_log_user').css("border", "1px solid red")
+				hint_msg('login_user_err', '#login_form .field:first-of-type', '此欄不可為空')
+			}
+			if(!$('#id_log_pwd').val()){
+				$('#id_log_pwd').css("border", "1px solid red")
+				hint_msg('login_pwd_err', '#login_form .field:nth-of-type(2)', '此欄不可為空')
+			}
+		}
 	});
 });
 

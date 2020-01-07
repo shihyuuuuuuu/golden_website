@@ -34,10 +34,10 @@
                         </div>
                     </div>
                     <a class="item" href={% url 'bulletin' %}>我的班級</a>
-                    <div class="item menu-btn" id="register_btn">
+                    <div class="item menu-btn" id="menu_reg_btn">
                         <div class="ui inverted button">註冊</div>
                     </div>
-                    <div class="item menu-btn" id="login_btn">
+                    <div class="item menu-btn" id="menu_login_btn">
                         <div class="ui inverted button">登入</div>
                     </div>
                 </div>
@@ -74,7 +74,8 @@
                                 {{ register_form.password2 }}
                             </div>
                         </div>
-                        <button class="ui fluid large blue button" type="button" disabled>註冊</button>
+                        <button id="register_btn1" class="ui fluid large blue button" type="button" disabled>註冊</button>
+                        <button id="register_btn2" class="ui fluid large teal button" type="button">註冊成功！按我登入</button>
                     </div>
                 </form>
             </div>
@@ -89,16 +90,17 @@
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="username" id="login_username" placeholder="你的使用者名稱 Username">
+                                {{ login_form.username }}
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" id="log_password" placeholder="你的密碼 Password">
+                                {{ login_form.password }}
                             </div>
                         </div>
-                        <div class="ui fluid large blue submit button">登入科登！</div>
+                        <button id="login_btn" class="ui fluid large blue button" type="button">登入科登</button>
+                        <p style="text-align: center; margin-top: 0.5rem;">還沒有帳號嗎？<a href="#" id="push_me_register">按我註冊</a></p>
                     </div>
                 </form>
             </div>
