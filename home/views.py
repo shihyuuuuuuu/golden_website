@@ -1,5 +1,5 @@
 from datetime import datetime
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -44,7 +44,7 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
-# A view for the registration request
+# A view handling the registration request
 def registration(request):
     form = RegisterForm(request.POST)
     response_data = {
@@ -63,16 +63,24 @@ def registration(request):
             
     return JsonResponse(response_data)
 
-def login(request):
+# A view handling the login request
+def login_request(request):
     form = LoginForm(request.POST)
     if form.is_valid():
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user = authenticate(username=username, password=password)
         if user is not None:
+            login(request, user)
             return HttpResponse("Login Success!")
         else:
             return HttpResponse("Login Failed.")
+
+# A view handling the login request
+def logout_request(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return HttpResponse("You are logged out.") 
 
 def bulletin(request):
     context = {'register_form': RegisterForm(), 'login_form': LoginForm()}

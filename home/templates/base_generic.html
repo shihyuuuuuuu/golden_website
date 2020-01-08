@@ -34,12 +34,18 @@
                         </div>
                     </div>
                     <a class="item" href={% url 'bulletin' %}>我的班級</a>
-                    <div class="item menu-btn" id="menu_reg_btn">
-                        <div class="ui inverted button">註冊</div>
-                    </div>
-                    <div class="item menu-btn" id="menu_login_btn">
-                        <div class="ui inverted button">登入</div>
-                    </div>
+                    {% if user.is_authenticated %}
+                        <div class="item menu-btn" id="menu_logout_btn">
+                            <div class="ui inverted button">登出</div>
+                        </div>
+                    {% else %}
+                        <div class="item menu-btn" id="menu_reg_btn">
+                            <div class="ui inverted button">註冊</div>
+                        </div>
+                        <div class="item menu-btn" id="menu_login_btn">
+                            <div class="ui inverted button">登入</div>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="hamburger">
                     <span class="hamburger-bun"></span>
