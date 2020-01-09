@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -82,15 +83,18 @@ def logout_request(request):
         logout(request)
         return HttpResponse("You are logged out.") 
 
-def bulletin(request):
+def myclass(request):
     context = {'register_form': RegisterForm(), 'login_form': LoginForm()}
-    return render(request, 'bulletin.html', context=context)
+    return render(request, 'myclass.html', context=context)
+
+def bulletin(request):
+    return render(request, 'bulletin.html')
 
 def pretest(request):
     return render(request, 'pretest.html')
 
-def dicussion(request):
-    return render(request, 'dicussion.html')
+def discussion(request):
+    return render(request, 'discussion.html')
 
 def score(request):
     return render(request, 'score.html')

@@ -158,7 +158,7 @@ $(document).ready(function() {
                 $('#register_btn1').css("display","none");
                 $('#register_btn2').css("display", "inline");
                 $('#register_form input').attr("disabled", true);
-        },
+            },
         });
     });
 
