@@ -22,23 +22,14 @@ $(document).ready(function(){
         $("#english").css("visibility", "visible");
     },{offset:0});
 
-    $('#english').waypoint(function(){
-        $("#math").addClass('animated fadeInUp');
-        $("#math").css("visibility", "visible");
-    },{offset:0});
-
-    $('#math').waypoint(function(){
-        $("#tech").addClass('animated fadeInUp');
-        $("#tech").css("visibility", "visible");
-    },{offset:0});
-
     $('.double.right.icon') 
         .transition('set looping')
         .transition('slide left', '800ms');
 
-    /*$("#down-icon").mouseenter(function(){
-        $(this).transition('jiggle');
-    });*/
+    $('#edit_banner').click(function(){
+        $("#fileInput").click();
+        console.log("clickd");
+    })
 
     $("#down-icon")
         .transition('set looping')
@@ -69,13 +60,13 @@ $(document).ready(function(){
     
     $("#bar_eng").click(function(){
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#english").offset().top - 150
+            scrollTop: $(".content-area:eq(2)").offset().top - 150
         }, 1000);
     });
     
     $("#bar_math").click(function(){
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#math").offset().top - 150
+            scrollTop: $(".content-area:eq(3)").offset().top - 150
         }, 1000);
     });
     
@@ -85,7 +76,6 @@ $(document).ready(function(){
         }, 1000);
     });
     
-    $("#child_english").modal('attach events', '.eng_card .button', 'show');
     $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
     $("#week_schedule").modal('attach events', '#schedule_btn', 'show');
 

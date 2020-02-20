@@ -1,3 +1,6 @@
+/************************
+ * Universe Page Styles *
+ ************************/
 .universe {
     background-color: #1a1a7fff;
     margin-top: 4rem;
@@ -17,10 +20,10 @@
     margin: -1rem auto;
 }
 #right_side {
-    height: 100%;
+    height: 45%;
 }
 #sche_tbl {
-    height: 60%;
+    height: 100%;
 }
 #sche_tbl table {
     float: right;
@@ -47,29 +50,49 @@
 #class2 { border-right: solid 8px rgb(244, 91, 105); }
 #class3 { border-right: solid 8px blue; }
 #schedule_right {
-    height: 60%;
+    height: 100%;
     padding: 0;
+
 }
 #clock_grid {
     height: 100%;
 }
-#clock_div {
-    height: 60%;
+#clock_grid #canvas {
+    transform: scaleY(-1);
+    height: 90%;
+    width: 100%;
     padding: 0;
 }
-#clock_div canvas {
-    background-color: #1a1a7fff;
-    transform: scaleY(-1);
-}
 #schedule_link {
-    height: 40%;
+    height: 10%;
     color: #fff;
+    padding: 0;
 }
 #schedule_btn {
     display: none;
 }
-#game {
-    height: 40%;
+#banner {
+    align-items: center;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    max-height: 23%;
+    overflow: hidden;
+    position: relative;
+}
+#edit_banner {
+    background-color: #595959;
+    border-radius: 6px;
+    border: 0;
+    color: #fff;
+    font-weight: 100 !important;
+    left: 0;
+    bottom: 0;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    position: absolute;
+    line-height: 1.4285em !important;
 }
 #inform-down {
     height: 50px;
@@ -79,69 +102,85 @@
     position:absolute; 
     text-align:center; 
 }
+
+/*************************
+ * Content Blocks Styles *
+ *************************/
 .content-area {
+    background-color: #eeeeeeff;
+    border-bottom: 1px dashed #928d8d4f;
     padding: 4rem 11rem;
 }
-#about-us {
-    background-color: #eeeeeeff;
-    visibility: hidden;
+.content-area h1 {
+    letter-spacing: 2rem;
 }
 .content-area p {
     font-size: 17px;
     line-height: 40px;
 }
+.left-padding { padding-left: 6rem !important;}
+.sub_title { margin: 0;}
+.cls_blk {
+    border-radius: 0.4em;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 6px 3px 6px 0px;
+    padding: 4px 4px;
+    text-align: center;
+}
+.eng_blk {
+    background-color: #FFE6CC;
+    border: 1px solid #ee964b;
+    color: #BD7000;
+    min-width: 6rem;
+}
+.math_blk {
+    background-color: #D5E8D4;
+    border: 1px solid #73956F;
+    color: #73956F;
+    min-width: 7rem;
+}
+figure { margin: 0; }
+figcaption {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Class Structure */
+#class_struct {
+    color: #fff;
+    margin: 0 auto; 
+    width: 60%;
+}
+
+/* About us */
+#about-us {
+    visibility: hidden;
+}
 #about-us h3 {
     color: #b7b7b7;
     display: inline;
-    margin: 0;
 }
-#english {
-    background-image: url("../images/aboutus_bw.jpg");
-    background-size:cover;
-    position: relative;
-    background-color: #eeeeeeff;
-    visibility: hidden;
+
+/* English */
+#eng .intro_icon i {
+    color: #ee964b;
+    margin: 1rem;
 }
-#english > .ui.grid { margin: 5rem 0; }
-#mobile_eng_title { display: none; }
-/*.eng_card { height: 28rem; }*/
-.grade {
-    position: absolute;
-    top: 0!important;
-    left: 0!important;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 1em;
-    z-index: 10;
+#eng figcaption { color: #ee964b; }
+
+/* Math and Science*/
+#math_sci .intro_icon i {
+    color: rgb(115, 149, 111);
+    margin: 1rem;
 }
-.grade h2 {
-    margin-top: 2.6em;
-}
-.grade h2::after {
-    border-bottom: solid 3px #000;
-    content: "";
-    display: block;
-    margin: 48px auto auto;
-    width: 56px;
-}
-.content h2 {
-    margin-bottom: 2em;
-}
-#math {
-    background-color: rgb(115, 149, 111);
-    color:#fff;
-    visibility: hidden;
-}
-#tech {
-    background-color: #3FBFBB;
-    visibility: hidden;
-}
+#math_sci figcaption { color: rgb(115, 149, 111); }
+
+/* Footer */
 #footer {
     background-color: #595959;
     color:#fff;
 }
-
 #footer .ui.grid .column {
     text-align: center;
 }
@@ -179,24 +218,26 @@
         margin: 0 auto;
         width: 70%;
     }
-    #game { display: none; }
+    #banner { margin: auto 1rem; }
     #inform-down { display: none; }
+    #aboutus_img2 { display: none; }
+
+    /* Content blocks */
     .content-area { padding: 2rem 1rem; }
     .content-area p { line-height: 30px; }
-    #aboutus_img2 { display: none; }
-    .line { display: none; }
-    #english {
-        background-image: none;
-        background-size:cover;
-        position: relative;
-        background-color: #ee964b;
-        visibility: hidden;
+    .content-area h1 { letter-spacing: 0rem;}
+    .left-padding { padding-left: 1rem !important;}
+    #class_struct {
+        padding: 0 1rem;
+        width: 100%;
     }
-    #english > .ui.grid { margin: 0; }
-    #mobile_eng_title { 
-        display: block; 
-        text-align: center;
-        color: #fff;
-        margin: 2rem auto;
+    #eng .mobile_hide {
+        display: none;
+    }
+    .intro_icon {
+        padding: 0rem !important;
+    }
+    .intro_icon i {
+        font-size: 3em !important;
     }
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.ui.dropdown').dropdown({
+    $('#hamburger .ui.dropdown').dropdown({
         action: 'hide',
     });
 
