@@ -7,9 +7,15 @@
 <script src="{% static 'js/myclass.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="myclass">
+<div id="myclass">
     <div class="ui padded grid">   
         <div class="three wide column">
+            {% if user.is_authenticated %}
+            <div id="personal_data">
+                <h2>我的暱稱</h2>
+                <h3>{{ user.username }}</h3>
+            </div>
+            {% endif %}
             <div class="ui vertical fluid tabular menu">
                 <a class="item">
                     <i class="tasks icon"></i>
@@ -27,6 +33,15 @@
                     <i class="table icon"></i>
                     個人成績紀錄
                 </a>
+            </div>
+            <div class="ui selection dropdown">
+                <input type="hidden">
+                <i class="dropdown icon"></i>
+                <div class="default text">班級</div>
+                <div class="menu">
+                    <div class="item" data-value="1">國一英文</div>
+                    <div class="item" data-value="0">國二數學</div>
+                </div>
             </div>
         </div>
         <div class="thirteen wide column">

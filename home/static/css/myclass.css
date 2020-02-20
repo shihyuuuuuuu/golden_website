@@ -2,17 +2,30 @@ body {
     background-color: #fff;
 }
 
-.myclass {
+#myclass {
     height: 100%;
     padding: 2rem 3rem;
     padding-top: 6rem;
 }
 
-.myclass .menu .item {
+#personal_data * {
+    padding-left: 1.42857143rem;
+    margin: 0.5rem auto;
+}
+
+#personal_data h3 {
+    color: rgba(34,36,38, 0.4);
+}
+
+#myclass .tabular.menu .item {
     font-size: 1.3rem;
 }
 
-.myclass .segment {
+#myclass .segment {
     min-height: 80vh;
     padding: 3rem;
+}
+
+#myclass .ui.dropdown {
+    width: 100%;
 }
