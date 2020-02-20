@@ -3,6 +3,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/clock.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="universe">
@@ -222,6 +223,57 @@
             </div>
         </div>
         <div class="one wide column"></div>
+    </div>
+</div>
+<div class="content-area" id="maker">
+    <div class="ui padded grid">
+        <!--For new class promotion-->
+        <button class="ui button animated infinite flash" id="promote_btn">NEW</button>
+        <div class="row">
+            <div class="five wide column"></div>
+            <div class="eleven wide right floated column" id="maker_title">
+                <span>
+                    <span style="color: #3FBFBB">G</span>olden 
+                    <span style="color: #3FBFBB">M</span>aker 
+                    <span style="color: #3FBFBB">S</span>pace
+                </span>
+                <div>
+                    <i class="terminal icon"></i>
+                    <h1>科登自造者基地</h1>
+                </div>
+            </div>
+            <div class="eleven wide right floated column" style="text-align: right; margin-right: 2rem;">
+                <p>
+                    108 課綱起將科技資訊素養納入正式課程，國高中都要學寫程式！<br>2020 年暑假，由 Easy 老師帶領淡江電機系的 Maulder 與成大資工系的 Elmo，<br>為科登的孩子們帶來全新的程式設計與軟硬體開發課程，與 108 課綱正式接軌🏃‍♂🏃‍♀
+                </p>
+            </div>
+        </div>
+        <div class="row" id="slogans">
+            <div class="four wide column">
+                <h2>Training on Project</h2>
+                <h2>專案中學習</h2>
+                <figure align="center">
+                    <i class="huge puzzle piece icon"></i>
+                </figure>
+                <p align="center">我們特別強調透過專案來了解理論，先建立整體概念再探討技術細節，是我們認為有效的學習路徑。</p>
+            </div>
+            <div class="four wide column">
+                <h2>Get your hands dirty</h2>
+                <h2>把手弄髒</h2>
+                <figure align="center">
+                    <i class="huge wrench icon"></i>
+                </figure>
+                <p align="center">我們鼓勵孩子們用力把手弄髒。腦中有想法就盡可能把它實現，在過程中培養自己解決問題的能力。</p>
+            </div>
+            <div class="four wide column">
+                <h2>Embrace Failure</h2>
+                <h2>擁抱失敗</h2>
+                <figure align="center">
+                    <i class="huge bug icon"></i>
+                </figure>
+                <p align="center">在這裡，失敗一點也不丟臉，反倒是理解自身不足的絕佳機會。 Debug 是成為強者的必經之路。</p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="content-area" id="footer">

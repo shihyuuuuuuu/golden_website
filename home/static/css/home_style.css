@@ -176,6 +176,59 @@ figcaption {
 }
 #math_sci figcaption { color: rgb(115, 149, 111); }
 
+/* Maker */
+#promote_btn {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: red;  
+    color: #fff; 
+    font-size: 1.2rem; 
+    margin-left: auto; 
+    margin-right: 3rem;
+    padding: 4px !important; 
+}
+#maker_title {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+#maker_title i {
+    font-size: 2.8rem;
+}
+#maker_title > span {
+    display: block;
+    font-family: 'Tomorrow', sans-serif;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    text-align: right;
+}
+#maker_title h1 {
+    display: inline;
+}
+#slogans {
+    margin-top: 3rem;
+    padding-right: 2rem;
+}
+#slogans .column h2 {
+    color: #3FBFBB;
+    line-height: 0.8rem;
+    text-align: center;
+}
+#slogans .column h2:nth-child(2) {
+    letter-spacing: 0.6em;
+    line-height: 1.2em;
+    text-indent: 1em;
+}
+#slogans figure {
+    color: #3FBFBB;
+    margin: 1rem;
+}
+#slogans p {
+    margin: auto 1.1rem;
+    line-height: 2.4rem;
+}
+
 /* Footer */
 #footer {
     background-color: #595959;
