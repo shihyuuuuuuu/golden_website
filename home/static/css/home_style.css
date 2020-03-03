@@ -2,7 +2,7 @@
  * Universe Page Styles *
  ************************/
 .universe {
-    background-color: #1a1a7fff;
+    background-color: #1a1a7f;
     margin-top: 4rem;
     height: calc(100vh - 4rem);
 }
@@ -108,14 +108,14 @@
  *************************/
 .content-area {
     background-color: #eeeeeeff;
-    border-bottom: 1px dashed #928d8d4f;
+    border-bottom: 2px dashed rgb(146, 141, 141, 0.43);
     padding: 4rem 11rem;
 }
 .content-area h1 {
     letter-spacing: 2rem;
 }
 .content-area p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 40px;
 }
 .left-padding { padding-left: 6rem !important;}
@@ -146,20 +146,40 @@ figcaption {
     text-align: center;
 }
 
+/* Vision */
+#vision {
+    background-image: url('../images/triangle_bg.jpg');
+    background-position: center;
+    color: #fff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    visibility: hidden;
+}
+.idea {
+    padding: 0 15rem;
+    text-align: center;
+}
+.idea h1 {
+    letter-spacing: 0.5rem; 
+    margin-bottom: 3rem;
+    line-height: 2.5rem;
+}
+
+/* Introduction */
+#intro {
+    text-align: center;
+}
+.mydivider {
+    border: 2px solid #7a7a7a;
+    margin: 2rem auto;
+    width: 3rem;
+}
+
 /* Class Structure */
-#class_struct {
+#class_struct > div {
     color: #fff;
     margin: 0 auto; 
     width: 60%;
-}
-
-/* About us */
-#about-us {
-    visibility: hidden;
-}
-#about-us h3 {
-    color: #b7b7b7;
-    display: inline;
 }
 
 /* English */
@@ -177,6 +197,9 @@ figcaption {
 #math_sci figcaption { color: rgb(115, 149, 111); }
 
 /* Maker */
+.margin_r2 {
+    margin-right: 2rem;
+}
 #promote_btn {
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -185,7 +208,7 @@ figcaption {
     font-size: 1.2rem; 
     margin-left: auto; 
     margin-right: 3rem;
-    padding: 4px !important; 
+    padding: 4px  !important; 
 }
 #maker_title {
     margin-bottom: 1rem;
@@ -200,15 +223,16 @@ figcaption {
     font-size: 2.8rem;
     line-height: 2.8rem;
     margin-bottom: 1rem;
-    margin-right: 2rem;
     text-align: right;
 }
 #maker_title h1 {
     display: inline;
 }
+#maker_p {
+    text-align: right;
+}
 #slogans {
     margin-top: 3rem;
-    padding-right: 2rem;
 }
 #slogans .column h2 {
     color: #3FBFBB;
@@ -218,7 +242,7 @@ figcaption {
 #slogans .column h2:nth-child(2) {
     letter-spacing: 0.6em;
     line-height: 1.2em;
-    text-indent: 1em;
+    text-indent: 0.6em;
 }
 #slogans figure {
     color: #3FBFBB;
@@ -227,15 +251,6 @@ figcaption {
 #slogans p {
     margin: auto 1.1rem;
     line-height: 2.4rem;
-}
-
-/* Footer */
-#footer {
-    background-color: #595959;
-    color:#fff;
-}
-#footer .ui.grid .column {
-    text-align: center;
 }
 
 @media only screen and (max-width: 767px) {
@@ -277,20 +292,47 @@ figcaption {
 
     /* Content blocks */
     .content-area { padding: 2rem 1rem; }
-    .content-area p { line-height: 30px; }
+    .content-area p { font-size: 16px; line-height: 30px; }
     .content-area h1 { letter-spacing: 0rem;}
     .left-padding { padding-left: 1rem !important;}
     #class_struct {
-        padding: 0 1rem;
+        padding: 1.5rem 1rem;
         width: 100%;
     }
-    #eng .mobile_hide {
-        display: none;
+    #class_struct > div {
+        width: 85%;
+    }
+    .mobile_hide {
+        display: none !important;
     }
     .intro_icon {
         padding: 0rem !important;
     }
     .intro_icon i {
         font-size: 3em !important;
+    }
+    .idea {
+        padding: 0 1rem;
+    }
+    .idea h1 {
+        margin-bottom: 1rem;
+    }
+    #promote_btn {
+        margin-right: 1rem;
+    }
+    #maker_title span {
+        font-size: 2.4rem;
+    }
+    .margin_r2 {
+        margin-right: 0;
+    }
+    #maker_p {
+        text-align: left;
+    }
+    #slogans .column {
+        margin: 2rem auto;
+    }
+    #slogans p {
+        margin: auto 2.9rem;
     }
 }

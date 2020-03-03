@@ -63,42 +63,24 @@
         </div>
     </div>
 </div>
-<div class="content-area" id="about-us">
-    <div class="ui padded grid" style="width: 100%;">
-        <div class="eight wide computer sixteen wide mobile column">
-            <div class="ui grid">
-                <div class="five wide computer seven wide mobile column">
-                    <h2 class="ui header" style="color:#3066BE">About Us</h2>
-                    <h3 class="sub_title">關於科登</h3>
-                </div>
-                <div class="eleven wide computer nine wide mobile column" style="border-left: thick solid #3066BE; height:5rem; margin: auto;">
-                </div>
-            </div>
-            <div class="ui clearing divider"></div>
-            <p>科登文教機構成立於西元1993年，深耕大豐原地區二十餘年，教育過的學子不計其數，遍布豐原、后里、神岡、潭子地區。十幾年來以英語教學打穩辦學根基，近年更加入數學、理化等課程使同學們獲得更全面的學習。而近一兩年，電機資訊團隊正在積極投入研發，預計於2020年推出嶄新的程式設計與機器人課程，與108課綱正式接軌。</p>
-        </div>
-        <div class="eight wide computer sixteen wide mobile column">
-            <img class="ui large centered rounded image" src="{% static 'images/aboutus.jpg' %}">
-        </div>
-        <div class="eight wide computer sixteen wide mobile column" id="aboutus_img2">
-            <img class="ui large centered rounded image" src="{% static 'images/aboutus.jpg' %}">
-        </div>
-        <div class="eight wide computer sixteen wide mobile column">
-            <div class="ui grid">
-                <div class="eleven wide computer nine wide mobile column" style="border-right: thick solid #3066BE; height:5rem; margin: auto;"></div>
-                <div class="five wide computer seven wide mobile column" style="text-align:right;">
-                    <h2 class="ui header" style="color:#3066BE">School Philosophy</h2>
-                    <h3 class="sub_title">理念與願景</h3>
-                </div>
-            </div>
-            <div class="ui clearing divider"></div>
-            <p>以開啟學生語言學習之鑰為首務。師資均具有專業英文職能、資歷與教學熱誠,願意付出百分之百所學及心力於教學對象。 不只是英文補習班,同時也兼任教導學生思考和知識整合能力的教育機構 ,使學生自在應用英文於聽、說、讀、寫,在日益國際化的環境中更具競爭力。</p>
-        </div>
+<div class="content-area" id="vision">
+    <div class="idea">
+        <i class="big quote left icon"></i>
+        <h1>讓每個孩子擁有能夠帶到未來的能力。</h1>
+        <p><i>每個孩子來到科登的原因或許不同，但我們希望在他（她）踏出科登大門的那天，能夠帶走屬於自己的東西。在這個變遷快速的時代，不再有任何技能或工作可稱作是「鐵飯碗」，我們努力幫助孩子找到適合自己的路，並有能力去面對那條路上的關卡與挑戰。</i></p>
+        <i class="big quote right icon"></i>
     </div>
 </div>
-<div class="content-area" style="background-color: #3066BE;">
-    <div id="class_struct">
-        <h1 style="text-align: center;">課程架構表</h1>
+<div class="content-area" id="intro">
+    <h2>關於科登</h2>
+    <div class="mydivider"></div>
+    <div class="idea">
+        <p>科登學院（原科登美語）成立於西元 1992 年，深耕大豐原地區近三十年，教育過的學子遍布豐原、后里、神岡、潭子地區，十幾年來以英語、數理教學打穩辦學根基。而近一兩年，電機資訊團隊正在積極投入研發，將於 2020 年暑假推出嶄新的資訊科技課程，同時將本班名稱更改為「科登學院」。除了提供知識傳授，我們更注重孩子的人格養成，並將「態度」視為一切學習的前提。</p>
+    </div>
+</div>
+<div class="content-area" style="background-color: #3066BE;" id="class_struct"> 
+    <div>
+        <h1 style="text-align: center;">課程架構</h1>
         <p>我們目前的授課科目主要可以分為「英文」、「數理」，以及 2020 年暑假即將開班的「資訊科技」課程，年級涵蓋國小到高中，各部門目前開課班級可以參考下圖表。</p>
         <img class="ui image" src="{% static 'images/class_structure.png' %}">
     </div>
@@ -230,42 +212,46 @@
         <!--For new class promotion-->
         <button class="ui button animated infinite flash" id="promote_btn">NEW</button>
         <div class="row">
-            <div class="five wide column"></div>
-            <div class="eleven wide right floated column" id="maker_title">
-                <span>
-                    <span style="color: #3FBFBB">G</span>olden 
-                    <span style="color: #3FBFBB">M</span>aker 
-                    <span style="color: #3FBFBB">S</span>pace
-                </span>
-                <div>
-                    <i class="terminal icon"></i>
-                    <h1>科登自造者基地</h1>
+            <div class="six wide computer sixteen wide mobile column"></div>
+            <div class="ten wide computer sixteen wide mobile column">
+                <div class="ui grid">
+                    <div class="sixteen wide column" id="maker_title">
+                        <span class="margin_r2">
+                            <span style="color: #3FBFBB">G</span>olden 
+                            <span style="color: #3FBFBB">M</span>aker 
+                            <span style="color: #3FBFBB">S</span>pace
+                        </span>
+                        <div>
+                            <i class="terminal icon"></i>
+                            <h1>科登創客基地</h1>
+                        </div>
+                    </div>
+                    <div class="sixteen wide column" id="maker_p">
+                        <p class="margin_r2">
+                            108 課綱起將科技資訊素養納入正式課程，國高中都要學寫程式！<br class="mobile_hide">2020 年暑假，由 Easy 老師帶領淡江電機系的 Maulder 與成大資工系的 Elmo，<br class="mobile_hide">為科登的孩子們帶來全新的程式設計與軟硬體開發課程，與 108 課綱正式接軌🏃‍♂🏃‍♀
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="eleven wide right floated column" style="text-align: right; margin-right: 2rem;">
-                <p>
-                    108 課綱起將科技資訊素養納入正式課程，國高中都要學寫程式！<br>2020 年暑假，由 Easy 老師帶領淡江電機系的 Maulder 與成大資工系的 Elmo，<br>為科登的孩子們帶來全新的程式設計與軟硬體開發課程，與 108 課綱正式接軌🏃‍♂🏃‍♀
-                </p>
-            </div>
         </div>
-        <div class="row" id="slogans">
-            <div class="four wide column">
+        <div class="row margin_r2" id="slogans">
+            <div class="four wide computer sixteen wide mobile column">
                 <h2>Training on Project</h2>
                 <h2>專案中學習</h2>
                 <figure align="center">
                     <i class="huge puzzle piece icon"></i>
                 </figure>
-                <p align="center">我們特別強調透過專案來了解理論，先建立整體概念再探討技術細節，是我們認為有效的學習路徑。</p>
+                <p align="center">我們特別強調透過專案來了解理論，先建立整體概念再探討技術細節，是我們認為較有效的學習路徑。</p>
             </div>
-            <div class="four wide column">
+            <div class="four wide computer sixteen wide mobile column">
                 <h2>Get your hands dirty</h2>
                 <h2>把手弄髒</h2>
                 <figure align="center">
                     <i class="huge wrench icon"></i>
                 </figure>
-                <p align="center">我們鼓勵孩子們用力把手弄髒。腦中有想法就盡可能把它實現，在過程中培養自己解決問題的能力。</p>
+                <p align="center">我們鼓勵孩子們用力把手弄髒。腦中有想法就盡可能動手把它實現，在過程中培養自己解決問題的能力。</p>
             </div>
-            <div class="four wide column">
+            <div class="four wide computer sixteen wide mobile column">
                 <h2>Embrace Failure</h2>
                 <h2>擁抱失敗</h2>
                 <figure align="center">
@@ -273,36 +259,14 @@
                 </figure>
                 <p align="center">在這裡，失敗一點也不丟臉，反倒是理解自身不足的絕佳機會。 Debug 是成為強者的必經之路。</p>
             </div>
-        </div>
-    </div>
-</div>
-<div class="content-area" id="footer">
-    <div class="ui one column centered grid">
-        <div class="column">
-            <h2>科登文教機構</h2>
-        </div>
-        <div class="column">
-            <h4>台中，豐原</h4>
-        </div>
-        <div class="column">
-            <div class="ui very relaxed horizontal list">
-                <div class="item">
-                    <i class="home icon"></i>
-                    台中市豐原區瑞安街 183 號
-                </div>
-                <div class="item">
-                    <i class="phone icon"></i>
-                    (04)2528-3433
-                </div>
-                <div class="item">
-                    <i class="clock outline icon"></i>
-                    14:00 ~ 22:00
-                </div>
+            <div class="four wide computer sixteen wide mobile column">
+                <h2>Idea Hub</h2>
+                <h2>創意集散地</h2>
+                <figure align="center">
+                    <i class="huge cubes icon"></i>
+                </figure>
+                <p align="center">「我想要自己做這個！」是許多自造者的初始想法。我們歡迎各種天馬行空的想法，也培養邏輯力、思考力與想像力。</p>
             </div>
-        </div>
-        <div class="ui clearing divider" style="width: 80%;"></div>
-        <div class="column">
-            Copyright 2020 © 科登文教機構 Designed by shihyuuuuuuu·_·
         </div>
     </div>
 </div>

@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'u95x8=shjku!ysjg76b3o3gpn&-v7n
 #DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.8', '192.168.0.28']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.87', '106.1.187.144', 'golden1992.ddns.net']
 
 
 # Application definition

@@ -1,88 +1,124 @@
-$(document).ready(function(){
-    var value = JSON.parse(document.getElementById('course-data').textContent);
-
+function schedule_tbl(courses) {
     var myTable = "";
-    var width = $(window).width();
-    for(var i = 0; i < Object.keys(value).length; ++i){
+
+    for (var i = 0; i < Object.keys(courses).length; ++i) {
         var id = "class" + i.toString();
-        myTable += "<tr><td id=\"" + id + "\">" + value[i].name + "</td></tr>";
+        myTable += "<tr><td id=\"" + id + "\">" + courses[i].name + "</td></tr>";
     }
-    if(i == 0){
+    if (i == 0) {
         myTable += "<tr><td>" + "今天沒課喔！" + "</td></tr>";
     }
-    document.getElementById('course_insert').innerHTML = myTable;
-    
-    $('#main-wrap').waypoint(function(){
-        $("#about-us").addClass('animated fadeInUp');
-        $("#about-us").css("visibility", "visible");
-    },{offset:-12});
+    return myTable;
+}
 
-    $('#about-us').waypoint(function(){
-        $("#english").addClass('animated fadeInUp');
-        $("#english").css("visibility", "visible");
-    },{offset:0});
+function add_waypoint(id, direction, top_offset, offset) {
+    return $('#' + id).waypoint(function () {
+        if (scroll_direction == direction && mousedown == 0) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $('#' + id).offset().top - top_offset,
+            }, 400);
+        }
+    }, { offset: offset })[0];
+}
 
-    $('.double.right.icon') 
+function waypoints_ctrl(waypoints, enable) {
+    waypoints.forEach(function (item) {
+        if (enable) {
+            item.enable();
+        } else {
+            item.disable();
+        }
+    });
+}
+
+function click_and_scroll(waypoints, clicked_id, scroll_id, top_offset) {
+    $("#" + clicked_id).click(function () {
+        $('.hamburger_icon').removeClass('active');
+        $('.hamburger_icon').parent().removeClass('open');
+        waypoints_ctrl(waypoints, 0);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#" + scroll_id).offset().top - top_offset,
+        }, 1000, function () {
+            if ($(window).width() >= 767)
+                waypoints_ctrl(waypoints, 1);
+        });
+    });
+}
+
+$(document).ready(function () {
+    var width = $(window).width();
+    var waypoints = [];
+    var courses = JSON.parse(document.getElementById('course-data').textContent);
+    scroll_direction = 0; // 0 for downscroll, 1 for upscroll
+    mousedown = 0;
+
+    /* Render the schedule table */
+    document.getElementById('course_insert').innerHTML = schedule_tbl(courses);
+
+    /* Waypoints(Scroll the screen automatically) */
+    $('#main-wrap').waypoint(function () {
+        $("#vision").addClass('animated fadeInUp');
+        $("#vision").css("visibility", "visible");
+    }, { offset: -12 });
+    waypoints.push(add_waypoint('class_struct', 1, 80, '65%'));
+    waypoints.push(add_waypoint('class_struct', 0, 80, '-50%'));
+    waypoints.push(add_waypoint('eng', 1, 100, '65%'));
+    waypoints.push(add_waypoint('eng', 0, 100, '-30%'));
+    waypoints.push(add_waypoint('math_sci', 1, 100, '65%'));
+    waypoints.push(add_waypoint('math_sci', 0, 100, '-30%'));
+    waypoints.push(add_waypoint('maker', 1, 20, '65%'));
+    waypoints.push(add_waypoint('maker', 0, 20, '-50%'));
+
+    /* Icon clicked animations */
+    $('.double.right.icon')
         .transition('set looping')
-        .transition('slide left', '800ms');
-
-    $('#edit_banner').click(function(){
-        $("#fileInput").click();
-        console.log("clickd");
-    })
+        .transition('flash', '3000ms');
 
     $("#down-icon")
         .transition('set looping')
         .transition('jiggle', '1000ms');
 
-    $("#down-icon").click(function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about-us").offset().top - 150
-        }, 1000);
-    });
+    $('#edit_banner').click(function () {
+        $("#fileInput").click();
+    })
 
-    $("#bar_about").click(function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about-us").offset().top - 150
-        }, 1000);
-    });
+    /* Menu buttons */
+    click_and_scroll(waypoints, 'down-icon', 'vision', 50);
+    click_and_scroll(waypoints, 'menu_eng', 'eng', 100);
+    click_and_scroll(waypoints, 'menu_math', 'math_sci', 100);
+    click_and_scroll(waypoints, 'menu_maker', 'maker', 20);
 
-    $("#bar_philo").click(function(){
-        if(width >= 767){
-            y_dist = 240;
-        }else{
-            y_dist = 300;
-        }
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about-us").offset().top + y_dist
-        }, 1000);
-    });
-    
-    $("#bar_eng").click(function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(".content-area:eq(2)").offset().top - 150
-        }, 1000);
-    });
-    
-    $("#bar_math").click(function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(".content-area:eq(3)").offset().top - 150
-        }, 1000);
-    });
-    
-    $("#bar_tech").click(function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#tech").offset().top - 150
-        }, 1000);
-    });
-    
+    /* Modals */
     $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
     $("#week_schedule").modal('attach events', '#schedule_btn', 'show');
 
-    if(width < 767){
+    /* For mobile devices */
+    if (width < 767) {
         $('#sche_tbl table').removeClass('right aligned');
         $('#sche_tbl table').addClass('center aligned');
         $('#footer .very.relaxed.list').removeClass('horizontal');
+        waypoints_ctrl(waypoints, 0);
     }
+
+    /* Detect scroll and mouse events */
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", function () {
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop) {
+            scroll_direction = 1; // upscroll
+        } else {
+            scroll_direction = 0; // downscroll
+        }
+        // For Mobile or negative scrolling
+        lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
+
+    window.addEventListener('mousedown', function () {
+        mousedown = 1;
+    });
+
+    window.addEventListener('mouseup', function () {
+        mousedown = 0;
+    })
 });
 

@@ -1,6 +1,6 @@
 .ui.inverted.menu {
     font-size:1.1rem;
-    background-color: #1a1a7fff;
+    background-color: #1a1a7f;
     height: 4rem;
 }
 
@@ -18,12 +18,21 @@ body {
 
 /* Reference: https://github.com/natzar/SemanticUiHamburgerMenu */
 /* Hamburger hidden by default */
-.hamburger{
+.hamburger_icon{
 	display:none
 }
 
 #register_form, #login_form {
 	width: 30vw;
+}
+
+/* Footer */
+#footer {
+    background-color: #595959;
+    color:#fff;
+}
+#footer .ui.grid .column {
+    text-align: center;
 }
 
 /* Mobile */
@@ -37,7 +46,7 @@ body {
 	display: none !important;
 	}
 
-	.hamburger {
+	.hamburger_icon {
 		width: 1.5rem;
 		height: 1.5rem;
 		position: absolute;
@@ -47,14 +56,14 @@ body {
 		display: block;
 	}
 
-	.hamburger span {
+	.hamburger_icon span {
 		display: block;
 		height: 3px;
 		background: #fff;
 		margin: 0 0 3px;
 	}
 
-	.hamburger:hover {
+	.hamburger_icon:hover {
 		-moz-opacity: 1;
 	    -khtml-opacity: 1;
 	    -webkit-opacity: 1;
@@ -67,7 +76,7 @@ body {
 	    transition-duration: .2s;
 	}
 
-	.hamburger.active .hamburger-bun {
+	.hamburger_icon.active .hamburger-bun {
 		margin: 0;
 		-webkit-transform-origin: center center;
 		-moz-transform-origin: center center;
@@ -75,7 +84,7 @@ body {
 		transform-origin: center center;
 	}
 			
-	.hamburger.active .hamburger-bun:first-child {
+	.hamburger_icon.active .hamburger-bun:first-child {
 		-webkit-transform: rotate(45deg);
 	    -moz-transform: rotate(45deg);
 	    -o-transform: rotate(45deg);
@@ -93,7 +102,7 @@ body {
 	    margin-top: 8px;
 	}
 
-	.hamburger.active .hamburger-bun:last-child {
+	.hamburger_icon.active .hamburger-bun:last-child {
 		-webkit-transform: rotate(-45deg);
 		-moz-transform: rotate(-45deg);
 		-o-transform: rotate(-45deg);
@@ -111,7 +120,7 @@ body {
 		margin-top: -3px;
 	}
 
-	.hamburger.active .hamburger-patty {
+	.hamburger_icon.active .hamburger-patty {
 		display: none;
 	}
 
