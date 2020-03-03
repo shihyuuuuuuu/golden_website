@@ -8,13 +8,13 @@
     padding: 1em;
 }
 
-.fade .menu {
-    opacity: 0.9;
+.ui.menu, .ui.button, h1, h2, h3, h4, h5 {
+	font-family: 'Noto Sans TC', sans-serif;
 }
 
 body {
 	background-color: #1a1a7fff;
-	font-family: "Helvetica Neue",Helvetica,Arial,"微軟正黑體","Microsoft JhengHei",sans-serif;
+	font-family: 'Noto Sans TC', sans-serif;
 }
 
 /* Reference: https://github.com/natzar/SemanticUiHamburgerMenu */
@@ -31,7 +31,7 @@ body {
 #footer {
     background-color: #595959;
     color:#fff;
-    padding: 4rem 11rem;
+    padding: 4rem 1rem;
 }
 #footer .ui.grid .column {
     text-align: center;

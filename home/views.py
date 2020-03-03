@@ -83,6 +83,9 @@ def logout_request(request):
         logout(request)
         return HttpResponse("You are logged out.") 
 
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
 def myclass(request):
     context = {'register_form': RegisterForm(), 'login_form': LoginForm()}
     return render(request, 'myclass.html', context=context)

@@ -1,0 +1,114 @@
+#about_top {
+    background-image: url('../images/star-gazing.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    color: #fff;
+    margin-top: 4rem;
+    padding: 4rem 4rem;
+}
+#about_top .title h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin: 2rem auto;
+}
+.content-blk {
+    background-color: #fff;
+    color: #3b4868;
+    padding: 4rem 27rem;
+    text-align: center;
+}
+.content-blk h2 {
+    letter-spacing: 0.5rem;
+    margin: 2rem auto;
+}
+.content-blk p {
+    font-size: 18px;
+    line-height: 40px;
+}
+.title {
+    color: #ffc100;
+}
+.title span {
+    color: #adadad;
+}
+#core_values {
+    padding: 4rem 10rem;
+}
+#core_values > .ui.grid {
+    padding-left: 10rem;
+}
+#core_values p {
+    margin-top: 2rem;
+}
+#core_values .column {
+    padding: 1rem;
+    text-align: left;
+}
+#core_values h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#core_values .column span {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 3rem;
+}
+#core_values .core_eng {
+    letter-spacing: 0.1rem;
+}
+.y_col {
+    color: #ffc100;
+}
+.b_col {
+    color: #274690;
+}
+
+@media only screen and (max-width: 767px) {
+    .content-blk, #about_top {
+        padding: 2rem 1rem;
+    }
+    #about_top .column {
+        padding: 0.5rem;
+    }
+    #about_top .title h1 {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        margin: 1rem auto;
+    }
+    .content-blk p { 
+        font-size: 16px; 
+        line-height: 30px;
+        padding: 0.5rem;
+    }
+    .content-blk h1 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: 1rem auto;
+    }
+    .content-blk h2 {
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        margin: 1rem auto;
+    }
+    #core_values {
+        padding: 2rem 1rem;
+    }
+    #core_values > .ui.grid {
+        padding-left: 0;
+    }
+    #core_values p {
+        margin-top: 0.5rem;
+    }
+    #core_values .column {
+        padding: 1rem;
+        text-align: center;
+    }
+    #core_values .column:last-child {
+        text-align: left;
+    }
+    #core_values .column span {
+        display: block;
+        font-size: 16px;
+        line-height: 30px;
+    }
+}

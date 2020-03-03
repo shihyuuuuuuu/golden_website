@@ -200,6 +200,11 @@ $(document).ready(function () {
             }
         }
     });
+
+    /* For mobile devices */
+    if ($(window).width() < 767) {
+        $('#footer .ui.list').removeClass('horizontal');
+    }
 });
 
 // Add or remove the hint message of the form
