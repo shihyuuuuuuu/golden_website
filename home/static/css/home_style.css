@@ -108,8 +108,10 @@
  *************************/
 .content-area {
     background-color: #eeeeeeff;
-    border-bottom: 2px dashed rgb(146, 141, 141, 0.43);
     padding: 4rem 11rem;
+}
+#eng, #math_sci {
+    border-bottom: 2px dashed rgb(146, 141, 141, 0.43);
 }
 .content-area h1 {
     letter-spacing: 2rem;
@@ -227,9 +229,6 @@ figcaption {
 }
 #maker_title h1 {
     display: inline;
-}
-#maker_p {
-    text-align: right;
 }
 #slogans {
     margin-top: 3rem;

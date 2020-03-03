@@ -14,6 +14,7 @@ function schedule_tbl(courses) {
 function add_waypoint(id, direction, top_offset, offset) {
     return $('#' + id).waypoint(function () {
         if (scroll_direction == direction && mousedown == 0) {
+            console.log(id, direction);
             $([document.documentElement, document.body]).animate({
                 scrollTop: $('#' + id).offset().top - top_offset,
             }, 400);
@@ -67,9 +68,9 @@ $(document).ready(function () {
     waypoints.push(add_waypoint('math_sci', 1, 100, '65%'));
     waypoints.push(add_waypoint('math_sci', 0, 100, '-30%'));
     waypoints.push(add_waypoint('maker', 1, 20, '65%'));
-    waypoints.push(add_waypoint('maker', 0, 20, '-50%'));
+    waypoints.push(add_waypoint('maker', 0, 20, '-30%'));
 
-    /* Icon clicked animations */
+    /* Icon animations */
     $('.double.right.icon')
         .transition('set looping')
         .transition('flash', '3000ms');
@@ -120,5 +121,10 @@ $(document).ready(function () {
     window.addEventListener('mouseup', function () {
         mousedown = 0;
     })
+
+    /* Disable browser autoscroll after refresh */
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
 });
 

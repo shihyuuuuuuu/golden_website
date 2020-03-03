@@ -13,7 +13,8 @@
 }
 
 body {
-    background-color: #1a1a7fff;
+	background-color: #1a1a7fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,"微軟正黑體","Microsoft JhengHei",sans-serif;
 }
 
 /* Reference: https://github.com/natzar/SemanticUiHamburgerMenu */
@@ -30,6 +31,7 @@ body {
 #footer {
     background-color: #595959;
     color:#fff;
+    padding: 4rem 11rem;
 }
 #footer .ui.grid .column {
     text-align: center;

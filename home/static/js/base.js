@@ -3,14 +3,6 @@ $(document).ready(function () {
         action: 'hide',
     });
 
-    $('#main-wrap').waypoint(function () {
-        $('#main-wrap').toggleClass('fade');
-    }, { offset: -1 });
-
-    $('.ui.fluid.card .image').dimmer({
-        on: 'hover',
-    });
-
     $('.hamburger_icon').click(function (e) {
         $menu = $(this).parent();
         if (!$(this).hasClass('active')) {
