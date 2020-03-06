@@ -25,10 +25,10 @@ import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'u95x8=shjku!ysjg76b3o3gpn&-v7nltvu+s8_9(9s2-rg)lv$')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = False
+#DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.87', '106.1.187.144', 'golden1992.ddns.net']
+ALLOWED_HOSTS = ['165.22.253.67']
 
 
 # Application definition
@@ -79,12 +79,10 @@ WSGI_APPLICATION = 'goldenwebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'golden',
         'USER': 'shihyu',
-        'PASSWORD': 'password',
+        'PASSWORD': 'teng',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -129,6 +127,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    "static/",
+    os.path.join(BASE_DIR, "home/static"),
 ]
+STATIC_ROOT = '/home/shihyu/www/static'
