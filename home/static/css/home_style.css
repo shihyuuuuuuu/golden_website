@@ -167,16 +167,6 @@ figcaption {
     line-height: 2.5rem;
 }
 
-/* Introduction */
-#intro {
-    text-align: center;
-}
-.mydivider {
-    border: 2px solid #7a7a7a;
-    margin: 2rem auto;
-    width: 3rem;
-}
-
 /* Class Structure */
 #class_struct > div {
     color: #fff;
