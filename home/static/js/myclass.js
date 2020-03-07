@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('#hamburger .item:nth-child(-n+3)').css('display','none'); 
     $('#myclass .menu a').removeClass('active');
     $('#myclass .menu a:first-child').addClass('active');
     $.get({

@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $('a[href*=\\#]').on('click', function (e) {
+        $('.hamburger_icon').removeClass('active');
+        $('.hamburger_icon').parent().removeClass('open');
+        if (window.location.pathname == '/home/') {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top - 60,
+            }, 0);
+        }
+    });
+
     $('#hamburger .ui.dropdown').dropdown({
         action: 'hide',
     });

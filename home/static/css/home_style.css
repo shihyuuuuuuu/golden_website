@@ -280,7 +280,7 @@ figcaption {
     #aboutus_img2 { display: none; }
 
     /* Content blocks */
-    .content-area { padding: 2rem 1rem; }
+    .content-area { padding: 3rem 1rem; }
     .content-area p { font-size: 16px; line-height: 30px; }
     .content-area h1 { letter-spacing: 0rem;}
     .left-padding { padding-left: 1rem !important;}

@@ -3,5 +3,8 @@ node_modules
 # Text backup files
 *.bak
 
-#Database
+# Database
 *.sqlite3
+
+# pycache
+*.pyc

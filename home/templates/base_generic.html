@@ -23,17 +23,17 @@
             <div class="ui fixed inverted stackable menu">
                 <a class="header item" style="font-size:large" href="/">科登文教</a>
                 <div class="right menu" id="hamburger">
-                    <a class="item" id="menu_about" href={% url 'aboutus' %}>關於我們</a>
+                    <a class="item" id="menu_about" href="{% url 'aboutus' %}">關於我們</a>
                     <div class="ui dropdown item">
                         <div class="text">開班部門</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                            <div class="item" id="menu_eng">英文部</div>
-                            <div class="item" id="menu_math">數理部</div>
-                            <div class="item" id="menu_maker">創客基地</div>
+                            <a href="/#eng" class="item">英文部</a>
+                            <a href="/#math_sci" class="item">數理部</a>
+                            <a href="/#maker" class="item">創客基地</a>
                         </div>
                     </div>
-                    <a class="item" href={% url 'myclass' %}>我的班級</a>
+                    <a class="item" href="{% url 'myclass' %}">我的班級</a>
                     {% if user.is_authenticated %}
                         <div class="item menu-btn" id="menu_logout_btn">
                             <div class="ui inverted button">登出</div>

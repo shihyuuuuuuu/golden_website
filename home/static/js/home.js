@@ -11,16 +11,6 @@ function schedule_tbl(courses) {
     return myTable;
 }
 
-function click_and_scroll(clicked_id, scroll_id, top_offset) {
-    $("#" + clicked_id).click(function () {
-        $('.hamburger_icon').removeClass('active');
-        $('.hamburger_icon').parent().removeClass('open');
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#" + scroll_id).offset().top - top_offset,
-        }, 1000);
-    });
-}
-
 $(document).ready(function () {
     var width = $(window).width();
     var courses = JSON.parse(document.getElementById('course-data').textContent);
@@ -46,12 +36,6 @@ $(document).ready(function () {
     $('#edit_banner').click(function () {
         $("#fileInput").click();
     })
-
-    /* Menu buttons */
-    click_and_scroll('down-icon', 'vision', 50);
-    click_and_scroll('menu_eng', 'eng', 100);
-    click_and_scroll('menu_math', 'math_sci', 100);
-    click_and_scroll('menu_maker', 'maker', 20);
 
     /* Modals */
     $("#week_schedule").modal('attach events', '#schedule_link i, #schedule_link a', 'show');
