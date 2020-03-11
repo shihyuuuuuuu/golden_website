@@ -9,17 +9,15 @@
 #about_top .title h1 {
     font-size: 2.5rem;
     line-height: 2.5rem;
-    margin: 2rem auto;
 }
 .content-blk {
     background-color: #fff;
     color: #3b4868;
-    padding: 4rem 27rem;
+    padding: 2rem 27rem;
     text-align: center;
 }
 .content-blk h2 {
     letter-spacing: 0.5rem;
-    margin: 2rem auto;
 }
 .content-blk p {
     font-size: 18px;
@@ -28,25 +26,24 @@
 .title {
     color: #ffc100;
 }
+.title h1 {
+    margin: 2rem auto;
+}
 .title span {
     color: #adadad;
 }
 #core_values {
-    padding: 4rem 10rem;
+    padding: 2rem 10rem;
 }
 #core_values > .ui.grid {
     padding-left: 10rem;
-}
-#core_values p {
-    margin-top: 2rem;
 }
 #core_values .column {
     padding: 1rem;
     text-align: left;
 }
 #core_values h2 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem auto;
 }
 #core_values .column span {
     display: block;
@@ -62,10 +59,36 @@
 .b_col {
     color: #274690;
 }
+#members {
+    padding: 2rem 20rem;
+}
+#members .member_card {
+    color: #adadad;
+    text-align: center;
+}
+.member_card img {
+    border-radius: 50%;
+    width: 80%;
+}
+.member_card h2 {
+    color: #ffc100;
+    letter-spacing: 0.1rem;
+    margin: 0.2rem auto;
+}
+.member_card span {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.2rem;
+}
+#contact_us span {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
 
 @media only screen and (max-width: 767px) {
-    .content-blk, #about_top {
-        padding: 2rem 1rem;
+    #about_top {
+        padding: 4rem 1rem 2rem;
     }
     #about_top .column {
         padding: 0.5rem;
@@ -73,7 +96,12 @@
     #about_top .title h1 {
         font-size: 1.8rem;
         line-height: 1.8rem;
+    }
+    .title h1 {
         margin: 1rem auto;
+    }
+    .content-blk {
+        padding: 1.5rem 1rem;
     }
     .content-blk p { 
         font-size: 16px; 
@@ -83,32 +111,36 @@
     .content-blk h1 {
         font-size: 1.5rem;
         line-height: 1.5rem;
-        margin: 1rem auto;
     }
     .content-blk h2 {
         font-size: 1.3rem;
         letter-spacing: 0.1rem;
         margin: 1rem auto;
     }
-    #core_values {
-        padding: 2rem 1rem;
+    #core_values, #members, #contact_us {
+        padding: 3rem 1rem;
     }
     #core_values > .ui.grid {
         padding-left: 0;
     }
-    #core_values p {
-        margin-top: 0.5rem;
-    }
-    #core_values .column {
-        padding: 1rem;
+    #core_values .column:first-child {
+        padding: 1rem 1rem 0.5rem 1rem;
         text-align: center;
     }
     #core_values .column:last-child {
+        padding: 0.5rem 1rem 1rem 1rem;
         text-align: left;
     }
     #core_values .column span {
         display: block;
         font-size: 16px;
         line-height: 30px;
+    }
+    .member_card img {
+        width: 60%;
+    }
+    .member_card h2 {
+        font-size: 1.3rem;
+        margin: 0.7rem auto 0.2rem auto;
     }
 }

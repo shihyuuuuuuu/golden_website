@@ -2,11 +2,13 @@ $(document).ready(function () {
     $('a[href*=\\#]').on('click', function (e) {
         $('.hamburger_icon').removeClass('active');
         $('.hamburger_icon').parent().removeClass('open');
-        if (window.location.pathname == '/home/') {
+        var hash = $(this).attr("href");
+        var target = hash.substring(0, hash.indexOf('#'));
+        var current = window.location.pathname.substring(6);
+        /* If the target page is the same as the current page. */
+        if (target == current || (target == '/' && current == '')) {
             e.preventDefault();
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 60,
-            }, 0);
+            window.location.hash = hash.substring(hash.indexOf('#') + 1);
         }
     });
 
@@ -23,7 +25,6 @@ $(document).ready(function () {
             $(this).removeClass('active');
             $menu.removeClass('open');
         }
-        e.preventDefault();
     });
 
     /******************************

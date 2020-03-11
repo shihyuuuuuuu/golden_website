@@ -4,6 +4,7 @@
         {% block title %}<title>科登文教機構</title>{% endblock %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+        <meta name="theme-color" content="#1a1a7f"/>
 
         <!-- Add additional CSS in static file -->
         {% load static %}
@@ -23,7 +24,16 @@
             <div class="ui fixed inverted stackable menu">
                 <a class="header item" style="font-size:large" href="/">科登文教</a>
                 <div class="right menu" id="hamburger">
-                    <a class="item" id="menu_about" href="{% url 'aboutus' %}">關於我們</a>
+                    <div class="ui dropdown item">
+                        <div class="text">關於我們</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="aboutus#about_top" class="item">願景與使命</a>
+                            <a href="aboutus#core_values" class="item">核心價值</a>
+                            <a href="aboutus#members" class="item">團隊成員</a>
+                            <a href="aboutus#contact_us" class="item">聯絡我們</a>
+                        </div>
+                    </div>
                     <div class="ui dropdown item">
                         <div class="text">開班部門</div>
                         <i class="dropdown icon"></i>
