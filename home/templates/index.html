@@ -1,13 +1,13 @@
 {% extends "base_generic.html" %}
 {% block styles %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/clock.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="universe">
-    <div class="ui two column padded grid" id="main-area">
+    <div class="ui two column padded centered grid" id="main-area">
         <div class="ten wide computer sixteen wide mobile column">
             <img class="ui centered image" src="{% static 'images/space.png' %}">
         </div>
@@ -41,8 +41,8 @@
                     &nbsp;&nbsp;查看完整課表
             </button>
             <div class="sixteen wide column" id="banner" style="margin-bottom: 3rem;">
-                <a href="/home/myclass">
-                    <img src="{% static 'images/banner_bg.png' %}" style="width: 100%; border-radius: 1em; margin: auto;">
+                <a href="/home/makerspace">
+                    <img src="{% static 'images/maker_banner.jpg' %}" style="width: 100%; border-radius: 1em; margin: auto;">
                 </a>
                 {% if user.is_authenticated %}
                 <div class="ui button" id="edit_banner">
@@ -57,13 +57,13 @@
                 {% endif %}
             </div>            
         </div>
-        <div class"sixteen wide column" id="inform-down">
+        <div class="one wide column" id="inform-down">
             <a href="/#vision" style="color: #fff;text-decoration: none;"><i id="down-icon" class="chevron down link icon" style="font-size:2rem;"></i></a>
             <p sytle="font-size:8px;">往下滑！</p>
         </div>
     </div>
 </div>
-<div class="content-area" id="vision">
+<div class="content-blk" id="vision">
     <div class="idea">
         <i class="big quote left icon"></i>
         <h1>讓每個孩子擁有能夠帶到未來的能力。</h1>
@@ -71,14 +71,14 @@
         <i class="big quote right icon"></i>
     </div>
 </div>
-<div class="content-area" style="background-color: #3066BE;" id="class_struct"> 
+<div class="content-blk" style="background-color: #3066BE;" id="class_struct"> 
     <div>
         <h1 style="text-align: center;">科登的課程</h1>
         <p>我們目前的授課科目主要可以分為「英文」、「數理」，以及 2020 年暑假即將開班的「資訊科技」課程，年級涵蓋國小到高中，各部門目前開課班級可以參考下圖表。</p>
         <img class="ui image" src="{% static 'images/class_structure.png' %}">
     </div>
 </div>
-<div class="content-area" id="eng">
+<div class="content-blk" id="eng">
     <div class="ui padded grid">
         <div class="six wide computer sixteen wide mobile column left-padding">
             <div class="ui grid">
@@ -147,7 +147,7 @@
         <div class="one wide column mobile_hide"></div>
     </div>
 </div>
-<div class="content-area" id="math_sci">
+<div class="content-blk" id="math_sci">
     <div class="ui padded grid">
         <div class="eleven wide computer sixteen wide mobile column">
             <div class="ui grid">
@@ -200,7 +200,7 @@
         <div class="one wide column"></div>
     </div>
 </div>
-<div class="content-area" id="maker">
+<div class="content-blk" id="maker">
     <div class="ui padded grid">
         <!--For new class promotion-->
         <button class="ui button animated infinite flash" id="promote_btn">NEW</button>
@@ -221,7 +221,7 @@
                     </div>
                     <div class="sixteen wide column" style="text-align: right;">
                         <p class="margin_r2">
-                            108 課綱起將科技資訊素養納入正式課程，國高中都要學寫程式！<br class="mobile_hide">2020 年暑假，由 Easy 老師帶領淡江電機系的 Maulder 與成大資工系的 Elmo，<br class="mobile_hide">為科登的孩子們帶來全新的程式設計與軟硬體開發課程，與 108 課綱正式接軌🏃‍♂🏃‍♀
+                            108 課綱起將科技資訊素養納入正式課程，國高中都要學寫程式！<br class="mobile_hide">2020 年暑假，由 Easy 老師帶領淡江電機系的 Maulder 與成大資工系的 Elmo，<br class="mobile_hide">為科登的孩子們帶來全新的程式設計與軟硬體開發課程，與 108 課綱正式接軌&#127939;
                         </p>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
             </div>
             <div class="four wide computer sixteen wide mobile column">
                 <h2>Get your hands dirty</h2>
-                <h2>把手弄髒</h2>
+                <h2>動手實作</h2>
                 <figure align="center">
                     <i class="huge wrench icon"></i>
                 </figure>

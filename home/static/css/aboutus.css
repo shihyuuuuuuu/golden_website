@@ -1,4 +1,4 @@
-#about_top {
+#cover {
     background-image: url('../images/star-gazing.jpg');
     background-position: 50% 50%;
     background-size: cover;
@@ -6,7 +6,7 @@
     margin-top: 4rem;
     padding: 4rem 4rem;
 }
-#about_top .title h1 {
+#cover .title h1 {
     font-size: 2.5rem;
     line-height: 2.5rem;
 }
@@ -87,13 +87,13 @@
 }
 
 @media only screen and (max-width: 767px) {
-    #about_top {
+    #cover {
         padding: 4rem 1rem 2rem;
     }
-    #about_top .column {
+    #cover .column {
         padding: 0.5rem;
     }
-    #about_top .title h1 {
+    #cover .title h1 {
         font-size: 1.8rem;
         line-height: 1.8rem;
     }

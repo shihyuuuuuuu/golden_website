@@ -8,7 +8,9 @@ $(document).ready(function () {
         /* If the target page is the same as the current page. */
         if (target == current || (target == '/' && current == '')) {
             e.preventDefault();
-            window.location.hash = hash.substring(hash.indexOf('#') + 1);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#" + hash.substring(hash.indexOf('#') + 1)).offset().top - 50,
+            }, 0);
         }
     });
 

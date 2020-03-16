@@ -95,10 +95,9 @@
     line-height: 1.4285em !important;
 }
 #inform-down {
-    height: 50px;
-    bottom:10px; 
+    height: 80px;
+    bottom: 0px; 
     color:#fff; 
-    width: 100%;
     position:absolute; 
     text-align:center; 
 }
@@ -106,17 +105,17 @@
 /*************************
  * Content Blocks Styles *
  *************************/
-.content-area {
+.content-blk {
     background-color: #eeeeeeff;
     padding: 4rem 11rem;
 }
 #eng, #math_sci {
     border-bottom: 2px dashed rgb(146, 141, 141, 0.43);
 }
-.content-area h1 {
+.content-blk h1 {
     letter-spacing: 2rem;
 }
-.content-area p {
+.content-blk p {
     font-size: 18px;
     line-height: 40px;
 }
@@ -280,9 +279,9 @@ figcaption {
     #aboutus_img2 { display: none; }
 
     /* Content blocks */
-    .content-area { padding: 3rem 1rem; }
-    .content-area p { font-size: 16px; line-height: 30px; }
-    .content-area h1 { letter-spacing: 0rem;}
+    .content-blk { padding: 3rem 1rem; }
+    .content-blk p { font-size: 16px; line-height: 30px; }
+    .content-blk h1 { letter-spacing: 0rem;}
     .left-padding { padding-left: 1rem !important;}
     #class_struct {
         padding: 1.5rem 1rem;
