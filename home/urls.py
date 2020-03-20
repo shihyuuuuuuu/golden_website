@@ -7,6 +7,7 @@ urlpatterns = [
     path('login_request', views.login_request, name='login_request'),
     path('logout_request', views.logout_request, name='logout_request'),
     path('aboutus', views.aboutus, name='aboutus'),
+    path('makerspace', views.makerspace, name='makerspace'),
     path('myclass', views.myclass, name='myclass'),
     path('bulletin', views.bulletin, name='bulletin'),
     path('pretest', views.pretest, name='pretest'),

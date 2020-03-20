@@ -84,7 +84,12 @@ def logout_request(request):
         return HttpResponse("You are logged out.") 
 
 def aboutus(request):
-    return render(request, 'aboutus.html')
+    context = {'register_form': RegisterForm(), 'login_form': LoginForm()}
+    return render(request, 'aboutus.html', context=context)
+
+def makerspace(request):
+    context = {'register_form': RegisterForm(), 'login_form': LoginForm()}
+    return render(request, 'makerspace.html', context=context)
 
 def myclass(request):
     context = {'register_form': RegisterForm(), 'login_form': LoginForm()}

@@ -1,0 +1,118 @@
+/**************
+ * Page Cover *
+ **************/
+#cover {
+    background-image: url('../images/coding.jpg');
+    background-position: 50% 40%;
+    background-size: cover;
+    color: #3b4868;
+    margin-top: 4rem;
+    text-align: left;
+}
+#cover .column {
+    margin-top: 13rem;
+}
+#cover h1 {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+}
+
+/************************
+ * Three Course Systems *
+ ************************/
+.content-blk {
+    padding: 4rem 12rem;
+}
+p {
+    font-size: 18px;
+    line-height: 40px;
+}
+#maker_course .cls_card {
+    padding: 2rem 4rem;
+    text-align: center;
+}
+#course_l {
+    background-color: #F5CB5C;
+    color: #3b4868;
+}
+#maker_course .qa {
+    margin-top: 2rem;
+    text-align: left !important;
+}
+.qa p {
+    margin-left: 2rem;
+}
+#course_r {
+    background-color: #7293A0;
+    color: #fff;
+    padding: 0;
+}
+#course_r .cls_card:first-child {
+    background-color: #3FBFBB;
+}
+#course_r figure {
+    display: inline-block;
+    margin: 0;
+}
+#course_r img {
+    margin: 1rem 1.5rem;
+}
+
+/*******************
+ * Recent Schedule *
+ *******************/
+ #schedule {
+    background-image: url('../images/white_bg2.png');
+    background-position: 50% 40%;
+    background-size: cover;
+    color: #3b4868;
+}
+#schedule img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+
+/***********************
+ * Teaching Philosophy *
+ ***********************/
+#slogans {
+    background-color: #7A7978;
+    color: #FFF;
+}
+#slogans h1 {
+    margin-bottom: 2rem;
+}
+#slogans .column h2 {
+    line-height: 0.8rem;
+    text-align: center;
+}
+#slogans .column h2:nth-child(2) {
+    letter-spacing: 0.6em;
+    line-height: 1.2em;
+    text-indent: 0.6em;
+}
+#slogans figure {
+    margin: 1rem;
+}
+#slogans p {
+    margin: auto 1.1rem;
+    line-height: 2.4rem;
+}
+
+/************
+ * Features *
+ ************/
+#features {
+    background-image: url('../images/white_bg1.png');
+    background-position: 50% 40%;
+    background-size: cover;
+    background-color: #eeeeeeff;
+}
+#features h1 {
+    color: #3b4868;
+    margin-bottom: 2rem;
+}
+#features .description {
+    margin-top: 1.5em;
+}

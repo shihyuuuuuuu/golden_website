@@ -1,0 +1,180 @@
+{% extends "base_generic.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/makerspace.css' %}">
+{% endblock %}
+{% block content %}
+<div class="content-blk" id="cover">
+    <div class="ui padded grid">
+        <div class="left floated nine wide column">
+            <h1>科登創客基地</h1>
+            <h2>= 專案中學習 × 動手實作 × 擁抱失敗 × 創意集散地</h2>
+        </div>
+    </div>
+</div>
+<div id="maker_course">
+    <div class="ui padded grid">
+        <div class="eight wide column cls_card" id="course_l">
+            <h1>常態課程</h1>
+            <p>學期間開設的常態課程提供孩子們專業的程式邏輯與專案實作訓練，並依據不同的年齡與程度可分為以下四條主線課程，使用不同的開發工具來學習資訊科技，日後即將陸續開班。</p>
+            <img class="ui image" src="{% static 'images/normal_course.png' %}">
+            <div class="qa">
+                <h3>什麼是 Scratch？</h3>
+                <div class="ui grid">
+                    <div class="twelve wide column">
+                        <p>Scratch
+                            是由麻省理工開發的一套電腦程式，可以讓初學者不需要先學習程式語言的語法，而是透過拖拉螢幕中的積木，就能設計出想要的遊戲或動畫。適合較小的孩子學習程式邏輯與數學計算知識，並培養創造力。
+                        </p>
+                    </div>
+                    <div class="four wide column">
+                        <img src="{% static 'images/scratch.png' %}" style="width:100%;">
+                    </div>
+                </div>
+                <h3>micro:bit、Arduino、Raspberry Pi 又是什麼？</h3>
+                <div class="ui grid">
+                    <div class="twelve wide column">
+                        <p>它們都是開發板，不過在難度和功能上各有不同。所謂開發板就是一塊佈滿電路與電子零件的板子，我們可以透過它提供的介面來操作上面的晶片，或是外接各種感測器來開發作品，例如：避障自走車、居家監控系統、機器人等等。
+                        </p>
+                    </div>
+                    <div class="four wide column">
+                        <img src="{% static 'images/arduino.png' %}" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column" id="course_r">
+            <div class="ui padded grid">
+                <div class="sixteen wide column cls_card">
+                    <h1>寒暑期專題營隊</h1>
+                    <p>在寒暑假開設的營隊以專題實作為主，例如：循跡/避障自走車、小型物聯網系統、LED
+                        cube...等。希望可以在三到五天內讓學生學習基本概念並立即應用到實作，產出可以帶回家的作品。不僅可以讓孩子快速建立成就感，也能夠激發學習興趣！</p>
+                    <figure>
+                        <img class="ui tiny image" src="{% static 'images/car.png' %}">
+                        <figcaption>自走車</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="ui tiny image" src="{% static 'images/drone_w.png' %}">
+                        <figcaption>飛行器</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="ui tiny image" src="{% static 'images/cloud-computing_w.png' %}">
+                        <figcaption>物聯網</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="ui tiny image" src="{% static 'images/cube_w.png' %}">
+                        <figcaption>LED Cube</figcaption>
+                    </figure>
+                    <span data-tooltip="Icons made by Freepik/ultimatearm/Kiranshastry from www.flaticon.com"
+                        data-position="bottom right" data-inverted="">
+                        <i class="large question circle icon"></i>
+                    </span>
+                    <div class="qa">
+                        <h3>什麼是物聯網(Internet of Things)？</h3>
+                        <p>
+                            簡單說就是將所有裝置都連上網際網路，並透過各種感測器來蒐集周遭環境的資訊，再根據這些資訊來做出相應的動作，以達到自動化、智慧化的目標。常見的應用有：當土壤乾燥時會自動灑水的<b>智慧澆灌系統</b>；或是可以在房間內控制各式家電的<b>智能居家系統</b>等等。
+                        </p>
+                    </div>
+                </div>
+                <div class="sixteen wide column cls_card">
+                    <h1>不定期通識講座</h1>
+                    <p>
+                        以生活化的角度去介紹一門理論或技術，例如：通訊、網頁、人工智慧、數據分析、電腦組成等，希望以淺顯易懂的解說配合適量的練習，讓學生在實作以外也能夠了解背後的運作細節。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-blk" id="schedule">
+    <h1 align="center">近期時程</h1>
+    <img src="{% static 'images/timeline.png' %}">
+</div>
+<div class="content-blk" id="slogans">
+    <h1 align="center">教學理念</h1>
+    <div class="ui padded grid">
+        <div class="row">
+            <div class="four wide computer sixteen wide mobile column">
+                <h2>Training on Project</h2>
+                <h2>專案中學習</h2>
+                <figure align="center">
+                    <i class="huge puzzle piece icon"></i>
+                </figure>
+                <p align="center">我們特別強調透過專案來了解理論，先建立整體概念再探討技術細節，是我們認為較有效的學習路徑。</p>
+            </div>
+            <div class="four wide computer sixteen wide mobile column">
+                <h2>Get your hands dirty</h2>
+                <h2>動手實作</h2>
+                <figure align="center">
+                    <i class="huge wrench icon"></i>
+                </figure>
+                <p align="center">我們鼓勵孩子們用力把手弄髒。腦中有想法就盡可能動手把它實現，在過程中培養自己解決問題的能力。</p>
+            </div>
+            <div class="four wide computer sixteen wide mobile column">
+                <h2>Embrace Failure</h2>
+                <h2>擁抱失敗</h2>
+                <figure align="center">
+                    <i class="huge bug icon"></i>
+                </figure>
+                <p align="center">在這裡，失敗一點也不丟臉，反倒是理解自身不足的絕佳機會。 Debug 是成為強者的必經之路。</p>
+            </div>
+            <div class="four wide computer sixteen wide mobile column">
+                <h2>Idea Hub</h2>
+                <h2>創意集散地</h2>
+                <figure align="center">
+                    <i class="huge cubes icon"></i>
+                </figure>
+                <p align="center">「我想要自己做這個！」是許多自造者的初始想法。我們歡迎各種天馬行空的想法，也培養邏輯力、思考力與想像力。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-blk" id="features">
+    <h1 align="center">基地特色</h1>
+    <div class="ui padded centered grid">
+        <div class="ui cards">
+            <div class="card">
+                <div class="image">
+                    <img src="{% static 'images/books.jpg' %}" style="width:100%;">
+                </div>
+                <div class="content">
+                    <span class="header">上百本研究書籍</span>
+                    <div class="description">
+                        書架上滿滿的書是我們強大的研究能量&#128522;
+                    </div>
+                </div>
+                <div class="extra content">
+                    科登創客基地
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="{% static 'images/hardwares.jpg' %}" style="width:100%;">
+                </div>
+                <div class="content">
+                    <span class="header">豐富硬體與套件</span>
+                    <div class="description">
+                        做實驗時不會少東少西&#128295;&#128296;&#128297;
+                    </div>
+                </div>
+                <div class="extra content">
+                    科登創客基地
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="{% static 'images/hardwares.jpg' %}" style="width:100%;">
+                </div>
+                <div class="content">
+                    <span class="header">豐富硬體與套件</span>
+                    <div class="description">
+                        做實驗時不會少東少西&#128295;&#128296;&#128297;
+                    </div>
+                </div>
+                <div class="extra content">
+                    科登創客基地
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
