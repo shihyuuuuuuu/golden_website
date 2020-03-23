@@ -1,9 +1,13 @@
-/**************
- * Page Cover *
- **************/
+.content-blk {
+    padding: 4rem 12rem;
+}
+p { font-size: 18px; line-height: 40px; }
+
+/* Page Cover */
 #cover {
     background-image: url('../images/coding.jpg');
     background-position: 50% 40%;
+    background-repeat: no-repeat;
     background-size: cover;
     color: #3b4868;
     margin-top: 4rem;
@@ -17,16 +21,7 @@
     letter-spacing: 1rem;
 }
 
-/************************
- * Three Course Systems *
- ************************/
-.content-blk {
-    padding: 4rem 12rem;
-}
-p {
-    font-size: 18px;
-    line-height: 40px;
-}
+/* Three Course Systems */
 #maker_course .cls_card {
     padding: 2rem 4rem;
     text-align: center;
@@ -42,6 +37,9 @@ p {
 .qa p {
     margin-left: 2rem;
 }
+.qa img {
+    width: 100%;
+}
 #course_r {
     background-color: #7293A0;
     color: #fff;
@@ -55,12 +53,10 @@ p {
     margin: 0;
 }
 #course_r img {
-    margin: 1rem 1.5rem;
+    margin: 1rem auto;
 }
 
-/*******************
- * Recent Schedule *
- *******************/
+/* Recent Schedule */
  #schedule {
     background-image: url('../images/white_bg2.png');
     background-position: 50% 40%;
@@ -73,9 +69,7 @@ p {
     width: 70%;
 }
 
-/***********************
- * Teaching Philosophy *
- ***********************/
+/* Teaching Philosophy */
 #slogans {
     background-color: #7A7978;
     color: #FFF;
@@ -100,9 +94,7 @@ p {
     line-height: 2.4rem;
 }
 
-/************
- * Features *
- ************/
+/* Features */
 #features {
     background-image: url('../images/white_bg1.png');
     background-position: 50% 40%;
@@ -115,4 +107,83 @@ p {
 }
 #features .description {
     margin-top: 1.5em;
+}
+.ui.cards {
+    padding: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .content-blk {
+        padding: 3rem 1rem;
+    }
+    p { font-size: 16px; line-height: 30px; }
+
+    /* Page Cover */
+    #cover {
+        background-position: 70% 50%;
+        background-size: 180%;
+        color: #3b4868;
+        margin-top: 4rem;
+        padding: 0rem 1rem;
+        text-align: left;
+    }
+    #cover .column {
+        margin-top: 10.5rem;
+        padding: 0 1rem;
+    }
+    #cover h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
+        margin: 0;
+    }
+    #cover h2 {
+        font-size: 0.8rem;
+        letter-spacing: 0rem;
+        margin: 0.5rem auto 0.7rem auto;
+    }
+
+    /* Three Course Systems */
+    #maker_course .cls_card {
+        padding: 2rem 1rem;
+    }
+    #maker_course .qa {
+        text-align: center !important;
+    }
+    #maker_course h1 {
+        font-size: 1.5rem;
+    }
+    .qa p {
+        margin-left: 0rem;
+    }
+    .qa h3 {
+        font-size: 1.1rem;
+    }
+    .qa .ui.grid > .column {
+        padding: 0.5rem;
+    }
+    .qa img {
+        width: 25%;
+    }
+    .qa .ui.grid:last-child img {
+        transform: rotate(-90deg);
+    }
+    #course_r .three.wide {
+        display: none;
+    }
+
+    /* Recent Schedule */
+    #schedule img {
+        width: 100%;
+    }
+
+    /* Teaching Philosophy */
+    #slogans .column {
+        margin: 2rem auto;
+    }
+
+    /* Features */
+    .ui.cards > .card {
+        margin: 1rem auto;
+        width: 75%;
+    }
 }

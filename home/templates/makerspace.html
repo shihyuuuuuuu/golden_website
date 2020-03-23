@@ -6,7 +6,7 @@
 {% block content %}
 <div class="content-blk" id="cover">
     <div class="ui padded grid">
-        <div class="left floated nine wide column">
+        <div class="left floated nine wide computer sixteen wide mobile column">
             <h1>科登創客基地</h1>
             <h2>= 專案中學習 × 動手實作 × 擁抱失敗 × 創意集散地</h2>
         </div>
@@ -14,60 +14,72 @@
 </div>
 <div id="maker_course">
     <div class="ui padded grid">
-        <div class="eight wide column cls_card" id="course_l">
+        <div class="eight wide computer sixteen wide mobile column cls_card" id="course_l">
             <h1>常態課程</h1>
             <p>學期間開設的常態課程提供孩子們專業的程式邏輯與專案實作訓練，並依據不同的年齡與程度可分為以下四條主線課程，使用不同的開發工具來學習資訊科技，日後即將陸續開班。</p>
             <img class="ui image" src="{% static 'images/normal_course.png' %}">
             <div class="qa">
                 <h3>什麼是 Scratch？</h3>
                 <div class="ui grid">
-                    <div class="twelve wide column">
+                    <div class="twelve wide computer sixteen wide mobile column">
                         <p>Scratch
                             是由麻省理工開發的一套電腦程式，可以讓初學者不需要先學習程式語言的語法，而是透過拖拉螢幕中的積木，就能設計出想要的遊戲或動畫。適合較小的孩子學習程式邏輯與數學計算知識，並培養創造力。
                         </p>
                     </div>
-                    <div class="four wide column">
-                        <img src="{% static 'images/scratch.png' %}" style="width:100%;">
+                    <div class="four wide computer sixteen wide mobile column">
+                        <img src="{% static 'images/scratch.png' %}">
                     </div>
                 </div>
                 <h3>micro:bit、Arduino、Raspberry Pi 又是什麼？</h3>
                 <div class="ui grid">
-                    <div class="twelve wide column">
+                    <div class="twelve wide computer sixteen wide mobile column">
                         <p>它們都是開發板，不過在難度和功能上各有不同。所謂開發板就是一塊佈滿電路與電子零件的板子，我們可以透過它提供的介面來操作上面的晶片，或是外接各種感測器來開發作品，例如：避障自走車、居家監控系統、機器人等等。
                         </p>
                     </div>
-                    <div class="four wide column">
-                        <img src="{% static 'images/arduino.png' %}" style="width:100%;">
+                    <div class="four wide computer sixteen wide mobile column">
+                        <img src="{% static 'images/arduino.png' %}">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="eight wide column" id="course_r">
+        <div class="eight wide computer sixteen wide mobile column" id="course_r">
             <div class="ui padded grid">
                 <div class="sixteen wide column cls_card">
                     <h1>寒暑期專題營隊</h1>
                     <p>在寒暑假開設的營隊以專題實作為主，例如：循跡/避障自走車、小型物聯網系統、LED
                         cube...等。希望可以在三到五天內讓學生學習基本概念並立即應用到實作，產出可以帶回家的作品。不僅可以讓孩子快速建立成就感，也能夠激發學習興趣！</p>
-                    <figure>
-                        <img class="ui tiny image" src="{% static 'images/car.png' %}">
-                        <figcaption>自走車</figcaption>
-                    </figure>
-                    <figure>
-                        <img class="ui tiny image" src="{% static 'images/drone_w.png' %}">
-                        <figcaption>飛行器</figcaption>
-                    </figure>
-                    <figure>
-                        <img class="ui tiny image" src="{% static 'images/cloud-computing_w.png' %}">
-                        <figcaption>物聯網</figcaption>
-                    </figure>
-                    <figure>
-                        <img class="ui tiny image" src="{% static 'images/cube_w.png' %}">
-                        <figcaption>LED Cube</figcaption>
-                    </figure>
-                    <span data-tooltip="Icons made by Freepik/ultimatearm/Kiranshastry from www.flaticon.com"
-                        data-position="bottom right" data-inverted="">
-                        <i class="large question circle icon"></i>
-                    </span>
+                    <div class="ui grid">
+                        <div class="four wide column">
+                            <figure>
+                                <img class="ui tiny image" src="{% static 'images/car.png' %}">
+                                <figcaption>自走車</figcaption>
+                            </figure>
+                        </div>
+                        <div class="four wide column">
+                            <figure>
+                                <img class="ui tiny image" src="{% static 'images/drone_w.png' %}">
+                                <figcaption>飛行器</figcaption>
+                            </figure>
+                        </div>
+                        <div class="four wide column">
+                            <figure>
+                                <img class="ui tiny image" src="{% static 'images/cloud-computing_w.png' %}">
+                                <figcaption>物聯網</figcaption>
+                            </figure>
+                        </div>
+                        <div class="four wide column">
+                            <figure>
+                                <img class="ui tiny image" src="{% static 'images/cube_w.png' %}">
+                                <figcaption>LED Cube</figcaption>
+                            </figure>
+                        </div>
+                        <div class="three wide column" style="padding: 0 1rem;">
+                            <span data-tooltip="Icons made by Freepik/ultimatearm/Kiranshastry from www.flaticon.com"
+                                data-position="right center" data-inverted="" style="left: 0;" data-variation="mini">
+                                <i class="large question circle icon"></i>
+                            </span>
+                        </div>
+                    </div>
                     <div class="qa">
                         <h3>什麼是物聯網(Internet of Things)？</h3>
                         <p>
